@@ -9,15 +9,19 @@
         <meta name="description" content="Splash Page">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% endblock %}
+
         {% block styles %}
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='/css/layout.css') }}">
         {% endblock %}
+
         {% block title %} 
         <title>Voxa Template</title>
         {% endblock %}
+
     </head>
     {% endblock %}
+
     {% block body %}
     <body id="body-style">
         {% block navbar %}
@@ -37,26 +41,11 @@
             </nav>
         </div>
         {% endblock %}
+
         {% block content %}
-        <main class = "c-mainGrid">
-            <div class="c-mainGrid__child">
-                <h2>Panel1</h2>
-                <div class ="new_like_button_container" data-commentid="1"></div>
-            </div>
-            <div class="c-mainGrid__child">
-                <h2>Panel2</h2>
-                <div class="like_button_container" data-commentid="2"></div>
-            </div>
-            <div class="c-mainGrid__child">
-                <h2>Panel3</h2>
-                <div class ="like_button_container" data-commentid="3"></div>
-            </div>
-            <div class="c-mainGrid__child">
-                <h2>Panel4</h2>
-                <div class ="like_button_container" data-commentid="4"></div>
-            </div>
-        </main>
         {% endblock %}
+
+        {% block footer %}
         <footer class="c-footerGrid">
             <div class="c-footerGrid_child">
                 <p>© 2021 Voxa Labs, Inc. All content and imagery the property of Voxa Labs, Inc. unless otherwise noted. All Rights Reserved.</p>
@@ -81,9 +70,11 @@
                 </ul>
             </div>
         </footer>
+        {% endblock %}
+
+        {% block scripts %}
         <!-- Load React. -->
         <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        {% block scripts %}
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
         <!-- Load our React component. -->
