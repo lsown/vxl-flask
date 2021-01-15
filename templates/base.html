@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name="author" content="Voxa">
+        <meta name="description" content="Splash Page">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for(./static/css/style.css) }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for(./static/css/layout.css) }}">
+
+        <title></title>
+    </head>
+    {% block body %}
+    <body id="body-style">
+        <header>
+        <!--nav wrapper-->
+            <div class="c-headerWrap">
+                <div class="c-headerWrapLeft">
+                    <a class="c-logo" href="index.html"><img class="c-LSO-logo" src="./static/images/logo_voxa.png" alt="Voxa Logo"></a>
+                </div>                 
+                <nav class="c-headerWrapRight">
+                    <ul class="c-nav-ul o-ul--flexstyle">
+                        <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab1</a></li>
+                        <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab2</a></li>
+                        <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab3</a></li>
+                        <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab4</a></li>
+                        <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab5</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class = "c-mainGrid">
+            <div class="c-mainGrid__child">
+                <h2>Panel1</h2>
+                <div class ="new_like_button_container" data-commentid="1"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel2</h2>
+                <div class="like_button_container" data-commentid="2"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel3</h2>
+                <div class ="like_button_container" data-commentid="3"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel4</h2>
+                <div class ="like_button_container" data-commentid="4"></div>
+
+            </div>
+        </main>
+        <footer class="c-footerGrid">
+            <div class="c-footerGrid_child">
+                <p>© 2021 Voxa Labs, Inc. All content and imagery the property of Voxa Labs, Inc. unless otherwise noted. All Rights Reserved.</p>
+            </div>
+            <div class="c-footerGrid_child">
+                <ul class="c-footerGrid__child-ul">
+                    <li class="c-footer__child-li">
+                        <a href="#" target="_blank">
+                            <img class="o-img--centerimg c-footer-logo" src="./static/images/icons/gitcat_icon.png" alt="GitHub">
+                        </a>
+                    </li>
+                    <li class="c-footer__child-li">
+                        <a href="#" target="_blank">
+                            <img class="o-img--centerimg c-footer-logo" src="./static/images/icons/linkedin_icon.png" alt="LinkedIn">
+                        </a>
+                    </li>
+                    <li class="c-footer__child-li">
+                        <a href="#">
+                            <img class="o-img--centerimg c-footer-logo" src="./static/images/icons/spotify_icon.png" alt="Spotify">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <!-- Load our React component. -->
+        <script src="./static/scripts/like_button.js"></script>
+    </body>
+    {% endblock %}
+</html>

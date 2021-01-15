@@ -6,6 +6,10 @@ def index():
   return render_template('index.html')
   return '<h1>Hello World!</h1>'
 
+@app.route('/base')
+def user(name):
+  return render_template('base.html')
+
 @app.route('/user/<name>')
 def user(name):
   return render_template('index.html')
