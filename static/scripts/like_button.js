@@ -45,14 +45,6 @@ class NewLikeButton extends React.Component {
   }
 
   class voxaTextField extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { field: "" };
-    }
-
-    setFieldValue = event => {
-      this.setState({field: event.target.value});
-    };
 
     render() {
       return (<p>Hello</p>);
