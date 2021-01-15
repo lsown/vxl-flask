@@ -55,11 +55,22 @@ class NewLikeButton extends React.Component {
     };
 
     render() {
-      <p>Hello</p>
+      return <p>Hello</p>
     }
   }
 
-
+  function Example() {
+    // Declare a new state variable, which we'll call "count"  const 
+    [count, setCount] = useState(0);
+    return (
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me
+        </button>
+      </div>
+    );
+  }
 
 // Find all DOM containers, and render Like buttons into them.
 document.querySelectorAll('.like_button_container')
@@ -81,6 +92,5 @@ document.querySelectorAll('.like_button_container')
       domContainer
     );
   });
-
   
 ReactDOM.render(voxaTextField, document.querySelector('.counter_button'));
