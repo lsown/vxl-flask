@@ -1,0 +1,53 @@
+
+/*Defines master template layout - Do not touch*/
+body {
+    margin: 0.5rem; /*Set default offset from browser window to 0.5 rem*/
+    display: grid;  
+    grid-row: 1fr 5fr 1fr;  /*Define layout as nav content footer*/
+    row-gap: 0.5rem;    /*vertical distance between header, body, and footer*/
+}
+
+/*Reference for controlling grid placement: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
+Adjust this to change layout of content*/
+.c-mainGrid {
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 1 x 1 */
+    align-items: center;
+}
+
+/*Adjust this to change child behavior of grid*/
+.c-mainGrid__child {
+    border: black solid 1px;
+    margin: 0.5rem;
+    min-height: 50px;
+}
+
+/* footer control & positioning */
+.c-footerGrid {
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    align-items: center;
+}
+
+.c-footerGrid__child {
+    border: black solid 1px;
+    margin: 0.5rem;
+    min-height: 50px;
+}
+
+.c-footerGrid__child-ul {
+    display: flex;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.c-footer__child-li {
+    flex: 0 1 25px; /*lets make it size of img constraint*/
+    margin: 0rem 1rem 0rem 1rem;
+}
