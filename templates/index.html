@@ -1,25 +1,27 @@
 {% extends base.html %}
-{% block title %}Index{% endblock %}
-{%block content %}
+{% block html %}
+{{ super() }}
+    {% block title %}Index{% endblock %}
+        {%block content %}
 
-<main class = "c-mainGrid">
-    <div class="c-mainGrid__child">
-        <h2>Panel1</h2>
-        <div class ="new_like_button_container" data-commentid="1"></div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel2</h2>
-        <div class="like_button_container" data-commentid="2"></div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel3</h2>
-        <div class ="like_button_container" data-commentid="3"></div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel4</h2>
-        <div class ="like_button_container" data-commentid="4"></div>
-    </div>
-</main>
-{% endblock %}
+        <main class = "c-mainGrid">
+            <div class="c-mainGrid__child">
+                <h2>Panel1</h2>
+                <div class ="new_like_button_container" data-commentid="1"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel2</h2>
+                <div class="like_button_container" data-commentid="2"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel3</h2>
+                <div class ="like_button_container" data-commentid="3"></div>
+            </div>
+            <div class="c-mainGrid__child">
+                <h2>Panel4</h2>
+                <div class ="like_button_container" data-commentid="4"></div>
+            </div>
+        </main>
+        {% endblock %}
 
 {% endblock %}
