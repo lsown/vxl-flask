@@ -50,7 +50,7 @@ class NewLikeButton extends React.Component {
     }
     
     render() {
-      return e("div", null, "test");
+      return ("div", null, "test");
     }
   }
 
@@ -90,4 +90,4 @@ document.querySelectorAll('.like_button_container')
   });
   
 ReactDOM.render(
-  e(NewLikeButton, document.querySelector('.counter_button')));
+  e(voxaTextField, document.querySelector('.counter_button')));
