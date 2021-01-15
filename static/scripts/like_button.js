@@ -48,7 +48,7 @@ class NewLikeButton extends React.Component {
     constructor(props) {
     super(props);
     }
-    
+
     render() {
       return (<p>Hello</p>);
     }
@@ -88,5 +88,3 @@ document.querySelectorAll('.like_button_container')
     );
   });
   
-ReactDOM.render(
-  e(voxaTextField, document.querySelector('.counter_button')));
