@@ -50,7 +50,7 @@ class NewLikeButton extends React.Component {
     }
     
     render() {
-      return e(<p>Hello</p>);
+      return e("p", null, "test");
     }
   }
 
