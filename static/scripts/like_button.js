@@ -78,8 +78,9 @@ class NewLikeButton extends React.Component {
     
     render() {
       return (
-        e("label", { htmlFor:"inputField", className:"test"}, "Input field:"),
-        e("input", {type:"text", id:"name", name:"name", size:"10" })
+        e("label", { htmlFor:"inputField", className:"test"},
+          e("input", {type:"text", id:"name", name:"name", size:"10" })
+        )
         );
     }
   }
