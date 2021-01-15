@@ -7,7 +7,7 @@ def index():
   return '<h1>Hello World!</h1>'
 
 @app.route('/base')
-def user(name):
+def base():
   return render_template('base.html')
 
 @app.route('/user/<name>')
