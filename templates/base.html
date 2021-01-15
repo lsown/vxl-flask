@@ -14,7 +14,9 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='/css/layout.css') }}">
         {% endblock %}
-        {% block title %} <title></title> {% endblock %}
+        {% block title %} 
+        <title>Voxa Template</title>
+        {% endblock %}
     </head>
     {% endblock %}
     {% block body %}
@@ -55,7 +57,7 @@
                 <div class ="like_button_container" data-commentid="4"></div>
             </div>
         </main>
-        {% block content %}
+        {% endblock %}
         <footer class="c-footerGrid">
             <div class="c-footerGrid_child">
                 <p>© 2021 Voxa Labs, Inc. All content and imagery the property of Voxa Labs, Inc. unless otherwise noted. All Rights Reserved.</p>
