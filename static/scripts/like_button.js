@@ -54,6 +54,7 @@ class NewLikeButton extends React.Component {
     }
   }
 
+/*
   function Example() {
     // Declare a new state variable, which we'll call "count"  const 
     [count, setCount] = useState(0);
@@ -65,7 +66,7 @@ class NewLikeButton extends React.Component {
         </button>
       </div>
     );
-  }
+  }*/
 
 // Find all DOM containers, and render Like buttons into them.
 document.querySelectorAll('.like_button_container')
