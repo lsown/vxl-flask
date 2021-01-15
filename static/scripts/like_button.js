@@ -52,7 +52,7 @@ class NewLikeButton extends React.Component {
     
     render() {
       return (
-        ("input", {type:"text", id:"name", name:"name" })
+        ("input", {type:"text", id:"name", name:"name", size:"10", })
       );
     }
   }
