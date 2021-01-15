@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 {% block html %}
-<html lang='en-us'>
+<html lang='EN-US'>
     {% block head %}
     <head>
         {% block meta %}
@@ -24,7 +24,7 @@
         <!--nav wrapper-->
         <div class="c-headerWrap">
             <div class="c-headerWrapLeft">
-                <a class="c-logo" href="index.html"><img class="c-LSO-logo" src="./static/images/logo_voxa.png" alt="Voxa Logo"></a>
+                <a class="c-logo" href="index.html"><img class="c-LSO-logo" src="{{ url_for('static', filename='images/logo_voxa.png') }}" alt="Voxa Logo"></a>
             </div>                 
             <nav class="c-headerWrapRight">
                 <ul class="c-nav-ul o-ul--flexstyle">
@@ -65,17 +65,17 @@
                 <ul class="c-footerGrid__child-ul">
                     <li class="c-footer__child-li">
                         <a href="#" target="_blank">
-                            <img class="o-img--centerimg c-footer-logo" src="{{ url_for('static', filename='images/icons/gitcat_icon.png')}}" alt="GitHub">
+                            <img class="o-img--centerimg c-footer-logo" src="{{ url_for('static', filename='images/icons/gitcat_icon.png') }}" alt="GitHub">
                         </a>
                     </li>
                     <li class="c-footer__child-li">
                         <a href="#" target="_blank">
-                            <img class="o-img--centerimg c-footer-logo" src="./static/images/icons/linkedin_icon.png" alt="LinkedIn">
+                            <img class="o-img--centerimg c-footer-logo" src="{{ url_for('static', filename='images/icons/linkedin_icon.png') }}" alt="LinkedIn">
                         </a>
                     </li>
                     <li class="c-footer__child-li">
                         <a href="#">
-                            <img class="o-img--centerimg c-footer-logo" src="./static/images/icons/spotify_icon.png" alt="Spotify">
+                            <img class="o-img--centerimg c-footer-logo" src="{{ url_for('static', filename='static/images/icons/spotify_icon.png') }}" alt="Spotify">
                         </a>
                     </li>
                 </ul>
