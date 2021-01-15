@@ -45,7 +45,10 @@ class NewLikeButton extends React.Component {
   }
 
   class voxaTextField extends React.Component {
-
+    constructor(props) {
+    super(props);
+    }
+    
     render() {
       return (<p>Hello</p>);
     }
