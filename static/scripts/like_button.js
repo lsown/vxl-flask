@@ -94,4 +94,4 @@ document.querySelectorAll('.like_button_container')
   });
   
 ReactDOM.render(e(voxaTextField[0]), document.querySelector('.counter_button'));
-ReactDOM.render(e(voxaTextField[0]), document.querySelector('.test'));
+ReactDOM.render(e(voxaTextField[1]), document.querySelector('.test'));
