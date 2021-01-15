@@ -47,13 +47,14 @@ class NewLikeButton extends React.Component {
   class voxaTextField extends React.Component {
     constructor(props) {
     super(props);
+    this.state = {}
     }
     
     render() {
       return (
-        e("label", { for:"inputField"}, "Input field: "), 
+        [e("label", { for:"inputField", class:"test"}, "Input field:"),
         e("input", {type:"text", id:"name", name:"name" })
-      );
+      ]);
     }
   }
 
@@ -92,4 +93,5 @@ document.querySelectorAll('.like_button_container')
     );
   });
   
-ReactDOM.render(e(voxaTextField), document.querySelector('.counter_button'));
+ReactDOM.render(e(voxaTextField[0]), document.querySelector('.counter_button'));
+ReactDOM.render(e(voxaTextField[0]), document.querySelector('.test'));
