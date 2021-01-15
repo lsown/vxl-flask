@@ -1,0 +1,94 @@
+/* || General Styles */
+
+* {
+    box-sizing: border-box; /* border box for predictable design */
+    margin: 0;  /* set no default margins for any elements */
+    padding: 0; /* set no default padding for any elements */
+}
+
+p {
+    padding: 0.5rem;
+}
+
+/* || Universal Objects */
+
+.o-ul--flexstyle {
+    list-style: none;
+/*    padding: 0; */
+}
+
+.c-headerWrap {
+    border: white solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* 1 fr logo, 4fr tabs */
+    align-items: center;
+    padding: 0.25em 1em 0.25em 1em;
+    background-color: black;
+}
+
+.c-headerWrapLeft {
+    grid-column: 1 / 2;
+    padding: 0.5rem; /* to match flex centering size */
+    border: solid 1px white; 
+}
+
+.c-headerWrapRight {
+    grid-column: 2 / 3;
+}
+
+.c-nav-ul {
+    border: black solid 1px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    border: solid 1px white;
+}
+
+.c-nav-ul__li {
+    border: white solid 1px;
+    margin: 0.5rem; 
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: white;
+}
+
+.c-nav-ul-li-a {
+    color: White;
+    outline: none;
+    display: inline-block; /* causes element padding to be respected */
+    padding: 5px; /* creates larger hit area */
+}
+
+.c-nav-ul__li a {
+    color: White;
+}
+
+.c-nav-ul__li a:link, a:visited {
+    text-decoration: none;
+    color: White;
+}
+
+.c-nav-ul__li a:hover {
+    text-decoration: underline;
+    color: Grey;
+    transition: 1s ease;
+}
+
+.c-nav-ul__li a:active {
+    text-decoration: none;
+    background-color: none;
+    color: Red;
+}
+
+
+
+
+
+.o-img--centerimg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c-footer-logo {
+    max-width: 25px; 
+}
