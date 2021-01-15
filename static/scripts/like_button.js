@@ -79,5 +79,4 @@ document.querySelectorAll('.like_button_container')
   });
 
   
-
-ReactDOM.render(Example, document.querySelector('.counter_button'));
+ReactDOM.render('hello', document.querySelector('.counter_button'));
