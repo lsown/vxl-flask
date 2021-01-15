@@ -55,7 +55,7 @@ class NewLikeButton extends React.Component {
     };
 
     render() {
-      return <p>Hello</p>
+      return (<p>Hello</p>);
     }
   }
 
