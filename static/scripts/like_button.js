@@ -44,6 +44,18 @@ class NewLikeButton extends React.Component {
     }
   }
 
+  function Example() {
+    // Declare a new state variable, which we'll call "count"  const [count, setCount] = useState(0);
+    return (
+      <div>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+
 // Find all DOM containers, and render Like buttons into them.
 document.querySelectorAll('.like_button_container')
   .forEach(domContainer => {
@@ -63,4 +75,11 @@ document.querySelectorAll('.like_button_container')
       e(NewLikeButton, { commentID: commentID }),
       domContainer
     );
+  });
+
+  document.querySelectorAll('.counter_button')
+  .forEach(domContainer => {
+    // Read the comment ID from a data-* attribute.
+    const commentID = parseInt(domContainer.dataset.commentid, 10);
+    ReactDOM.render(e(Example), domContainer);
   });
