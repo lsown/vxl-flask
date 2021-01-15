@@ -51,9 +51,7 @@ class NewLikeButton extends React.Component {
     }
 
     setFieldValue = event => {
-      this.setState({
-        field: event.target.value
-      });
+      this.setState({field: event.target.value});
     };
 
     render() {
@@ -61,18 +59,7 @@ class NewLikeButton extends React.Component {
     }
   }
 
-  function Example() {
-    // Declare a new state variable, which we'll call "count"  const 
-    [count, setCount] = useState(0);
-    return (
-      <div>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>
-          Click me
-        </button>
-      </div>
-    );
-  }
+
 
 // Find all DOM containers, and render Like buttons into them.
 document.querySelectorAll('.like_button_container')
