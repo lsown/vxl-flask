@@ -52,7 +52,7 @@ class NewLikeButton extends React.Component {
     
     render() {
       return (
-        e("input", {type:"text", id:"name", name:"name" })
+        ("input", {type:"text", id:"name", name:"name" })
       );
     }
   }
@@ -65,7 +65,7 @@ class NewLikeButton extends React.Component {
     
     render() {
       return (
-        e("label", { htmlFor:"inputField", className:"test"}, "Input field:")
+        ("label", { htmlFor:"inputField", className:"test"}, "Input field:")
         );
     }
   }
