@@ -77,9 +77,6 @@ document.querySelectorAll('.like_button_container')
     );
   });
 
-  document.querySelectorAll('.counter_button')
-  .forEach(domContainer => {
-    // Read the comment ID from a data-* attribute.
-    const commentID = parseInt(domContainer.dataset.commentid, 10);
-    ReactDOM.render(e(Example), domContainer);
-  });
+  
+
+ReactDOM.render(Example, document.querySelector('.counter_button'));
