@@ -21,15 +21,7 @@ p {
     background-color: black;
 }
 
-.c-headerWrapLeft {
-    grid-column: 1 / 2;
-    padding: 0.5rem; /* to match flex centering size */
-    border: solid 1px white; 
-}
 
-.c-headerWrapRight {
-    grid-column: 2 / 3;
-}
 
 .c-nav-ul {
     border: black solid 1px;

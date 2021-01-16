@@ -20,6 +20,16 @@ Adjust this to change layout of content*/
     padding: 0.25em 1em 0.25em 1em;
 }
 
+.c-headerWrapLeft {
+    grid-column: 1 / 2;
+    padding: 0.5rem; /* to match flex centering size */
+    border: solid 1px white; 
+}
+
+.c-headerWrapRight {
+    grid-column: 2 / 3;
+}
+
 /*Adjust this to change content grid pattern*/
 .c-mainGrid {
     border: black solid 1px;
