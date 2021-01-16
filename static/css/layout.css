@@ -23,7 +23,7 @@ Adjust this to change layout of content*/
 .c-headerWrapLeft {
     grid-column: 1 / 2;
     padding: 0.5rem; /* to match flex centering size */
-    border: solid 1px white; 
+    border: solid 1px black; 
 }
 
 .c-headerWrapRight {

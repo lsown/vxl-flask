@@ -30,7 +30,7 @@ p {
 }
 
 .c-nav-ul__li {
-    border: white solid 1px;
+    border: black solid 1px;
     margin: 0.5rem; 
     padding: 0.5rem 1rem 0.5rem 1rem;
     color: grey;
