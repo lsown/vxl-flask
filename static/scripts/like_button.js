@@ -69,7 +69,6 @@ class NewLikeButton extends React.Component {
     }
   }
 
-
 /*
   function Example() {
     // Declare a new state variable, which we'll call "count"  const 
@@ -105,7 +104,7 @@ document.querySelectorAll('.like_button_container')
     );
   });
   
-ReactDOM.render(e(inputLabel), document.querySelector('.panel4'));
+ReactDOM.render((inputLabel), document.querySelector('.panel4'));
 
 
-ReactDOM.render(e(inputText), document.querySelector('.panel3'));
+ReactDOM.render((inputText), document.querySelector('.panel3'));
