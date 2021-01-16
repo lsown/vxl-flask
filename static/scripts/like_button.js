@@ -47,7 +47,7 @@ class NewLikeButton extends React.Component {
   class inputText extends React.Component {
     constructor(props) {
     super(props);
-    this.state = { name: this.props.name}
+    this.state = { name: this.props.name, value: this.props.value}
     }
     render() {
       return (
@@ -59,7 +59,7 @@ class NewLikeButton extends React.Component {
   class inputLabel extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {}
+
     }
     
     render() {
@@ -110,4 +110,4 @@ document.querySelectorAll('.like_button_container')
 ReactDOM.render(e(inputLabel), document.querySelector('.panel4'));
 
 
-ReactDOM.render(e(inputText), document.querySelector('.panel3'));
+ReactDOM.render(e(inputText, this.props.name="hello"), document.querySelector('.panel3'));
