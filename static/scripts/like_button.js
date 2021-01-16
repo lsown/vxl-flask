@@ -110,10 +110,7 @@ ReactDOM.render(
   document.querySelector('.panel4')
 )
 
-ReactDOM.render(
-  e(inputLabel), 
-  document.querySelector('.panel3')
-)
+
 ReactDOM.render(
   e(inputText), 
   document.querySelector('.panel3')
