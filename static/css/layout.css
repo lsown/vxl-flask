@@ -10,6 +10,17 @@ body {
 /*Reference for controlling grid placement: 
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 Adjust this to change layout of content*/
+
+/*header grid layout*/
+.c-headerGrid {
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 1fr 4fr; /* 1 fr logo, 4fr tabs */
+    align-items: center;
+    padding: 0.25em 1em 0.25em 1em;
+}
+
+/*Adjust this to change content grid pattern*/
 .c-mainGrid {
     border: black solid 1px;
     display: grid;
