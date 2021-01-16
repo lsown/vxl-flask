@@ -102,7 +102,7 @@ document.querySelectorAll('.like_button_container')
     // Read the comment ID from a data-* attribute.
     const commentID = parseInt(domContainer.dataset.commentid, 10);
     ReactDOM.render(
-      e(NewLikeButton, { commentID: commentID }),
+      e(NewLikeButton, { commentID: commentID, id: "hello" }),
       domContainer
     );
   });
