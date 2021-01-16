@@ -26,30 +26,26 @@ p {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    border: solid 1px white;
+    border: solid 1px black;
 }
 
 .c-nav-ul__li {
     border: white solid 1px;
     margin: 0.5rem; 
     padding: 0.5rem 1rem 0.5rem 1rem;
-    color: white;
+    color: grey;
 }
 
 .c-nav-ul-li-a {
-    color: White;
+    color: black;
     outline: none;
     display: inline-block; /* causes element padding to be respected */
     padding: 5px; /* creates larger hit area */
 }
 
-.c-nav-ul__li a {
-    color: White;
-}
-
 .c-nav-ul__li a:link, a:visited {
     text-decoration: none;
-    color: White;
+    color: black;
 }
 
 .c-nav-ul__li a:hover {
