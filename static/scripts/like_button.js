@@ -47,7 +47,7 @@ class NewLikeButton extends React.Component {
   class inputText extends React.Component {
     constructor(props) {
     super(props);
-    this.state = { field:""}
+    
     }
     render() {
       return (
