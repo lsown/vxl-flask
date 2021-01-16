@@ -12,7 +12,7 @@
 
         {% block styles %}
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='/css/layout.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/layout.css') }}">
 
         {% endblock %}
 
@@ -30,7 +30,7 @@
     <body id="body-style">
         {% block navbar %}
         <!--nav wrapper-->
-        <div class="c-headerGrid">
+        <div class="c-headerGrid c-headerGrid-style">
             <div class="c-headerWrapLeft">
                 <a class="c-logo" href="{{ url_for('index') }}">
                     <img class="c-LSO-logo" 
