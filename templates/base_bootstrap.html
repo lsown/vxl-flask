@@ -13,7 +13,7 @@
         {% block styles %}
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='/css/layout.css') }}">
-
+        {{ bootstrap.load_css() }}
         {% endblock %}
 
         {% block title %} 
@@ -38,12 +38,12 @@
                 </a>
             </div>                 
             <nav class="c-headerWrapRight">
-                <ul class="c-nav-ul o-ul--flexstyle">
-                    <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab1</a></li>
-                    <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab2</a></li>
-                    <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab3</a></li>
-                    <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab4</a></li>
-                    <li class="c-nav-ul__li"><a class="c-nav-ul-li-a" href="#">Tab5</a></li>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link active href="#">Tab1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tab2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tab3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tab4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tab5</a></li>
                 </ul>
             </nav>
         </div>
@@ -80,7 +80,7 @@
         {% endblock %}
 
         {% block scripts %}
-
+        {{ bootstrap.load_js() }}
         <!-- Load React. -->
         <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
         <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>

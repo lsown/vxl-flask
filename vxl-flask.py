@@ -12,6 +12,14 @@ def index():
 def base():
   return render_template('base.html')
 
+@app.route('/index_bootstrap')
+def index_bootstrap():
+  return render_template('index_bootstrap.html')
+
+@app.route('/base_bootstrap')
+def base_bootstrap():
+  return render_template('base_bootstrap.html')
+
 @app.route('/user/<name>')
 def user(name):
   return render_template('index.html')
