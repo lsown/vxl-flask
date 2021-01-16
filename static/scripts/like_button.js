@@ -110,4 +110,5 @@ document.querySelectorAll('.like_button_container')
 ReactDOM.render(e(inputLabel), document.querySelector('.panel4'));
 
 
-ReactDOM.render(e(inputText, inputText.value="hello"), document.querySelector('.panel3'));
+ReactDOM.render(e(inputText, { name: "test"}, null), 
+  document.querySelector('.panel3'));
