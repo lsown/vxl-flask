@@ -112,3 +112,5 @@ ReactDOM.render(e(inputLabel), document.querySelector('.panel4'));
 
 ReactDOM.render(e(inputText, { name: "test"}, null), 
   document.querySelector('.panel3'));
+
+/* https://reactgo.com/react-createelement-example/ */
