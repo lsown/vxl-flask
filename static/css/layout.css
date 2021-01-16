@@ -3,7 +3,6 @@
 body {
     margin: 0.5rem; /*Set default offset from browser window to 0.5 rem*/
     display: grid;  
-    grid-row: 1fr 5fr 1fr;  /*Define layout as nav content footer*/
     row-gap: 0.5rem;    /*vertical distance between header, body, and footer*/
 }
 
