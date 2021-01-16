@@ -44,12 +44,11 @@ class NewLikeButton extends React.Component {
     }
   }
 
-  class voxaTextField extends React.Component {
+  class inputText extends React.Component {
     constructor(props) {
     super(props);
     this.state = {}
     }
-    
     render() {
       return (
         ("input", {type:"text", id:"name", name:"name", size:"10" })
@@ -65,25 +64,11 @@ class NewLikeButton extends React.Component {
     
     render() {
       return (
-        ("label", { htmlFor:"inputField", className:"test"}, "Input field:")
+        ("label", { htmlFor:"inputField", className:"test test2 test3"}, "Input field: ")
         );
     }
   }
 
-  class combined extends React.Component {
-    constructor(props) {
-    super(props);
-    this.state = {}
-    }
-    
-    render() {
-      return (
-        e("label", { htmlFor:"inputField", className:"test"}, ["Input Field label", 
-          e("input", {type:"text", id:"name", name:"name", size:"10" })]
-        )
-        );
-    }
-  }
 
 /*
   function Example() {
