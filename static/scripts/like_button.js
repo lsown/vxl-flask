@@ -47,11 +47,11 @@ class NewLikeButton extends React.Component {
   class inputText extends React.Component {
     constructor(props) {
     super(props);
-    
+    this.state = { name: this.props.name}
     }
     render() {
       return (
-        e("input", {type:"text", id:"name", name:"name", size:"10", placeholder:"Empty" })
+        e("input", {type:"text", id:"name", name:this.props.name, size:"10", placeholder:"Empty" })
       );
     }
   }
@@ -68,6 +68,26 @@ class NewLikeButton extends React.Component {
         );
     }
   }
+
+  class LikeButton3 extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { liked: false };
+    }
+  
+    render() {
+      if (this.state.liked) {
+        return 'You liked this.';
+      }
+  
+      return (
+        <button onClick={() => this.setState({ liked: true }) }>
+          Like
+        </button>
+      );
+    }
+  }
+  
 
 /*
   function Example() {
@@ -89,7 +109,7 @@ document.querySelectorAll('.like_button_container')
     // Read the comment ID from a data-* attribute.
     const commentID = parseInt(domContainer.dataset.commentid, 10);
     ReactDOM.render(
-      e(LikeButton, { commentID: commentID }),
+      e(LikeButton3, { commentID: commentID }),
       domContainer
     );
   });
