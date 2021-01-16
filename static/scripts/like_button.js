@@ -69,24 +69,7 @@ class NewLikeButton extends React.Component {
     }
   }
 
-  class LikeButton3 extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { liked: false };
-    }
-  
-    render() {
-      if (this.state.liked) {
-        return 'You liked this.';
-      }
-  
-      return (
-        <button onClick={() => this.setState({ liked: true }) }>
-          Like
-        </button>
-      );
-    }
-  }
+
   
 
 /*
@@ -109,7 +92,7 @@ document.querySelectorAll('.like_button_container')
     // Read the comment ID from a data-* attribute.
     const commentID = parseInt(domContainer.dataset.commentid, 10);
     ReactDOM.render(
-      e(LikeButton3, { commentID: commentID }),
+      e(LikeButton, { commentID: commentID }),
       domContainer
     );
   });
