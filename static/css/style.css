@@ -22,21 +22,21 @@ p {
 }
 
 .c-nav-ul {
-    border: black solid 1px;
+    border: white solid 1px;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
 }
 
 .c-nav-ul__li {
-    border: black solid 1px;
+    border: white solid 1px;
     margin: 0.5rem; 
     padding: 0.5rem 1rem 0.5rem 1rem;
-    color: black;
+    color: white;
 }
 
 .c-nav-ul-li-a {
-    color: black;
+    color: white;
     outline: none;
     display: inline-block; /* causes element padding to be respected */
     padding: 5px; /* creates larger hit area */
