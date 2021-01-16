@@ -26,7 +26,6 @@ p {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
-    border: solid 1px black;
 }
 
 .c-nav-ul__li {
@@ -59,10 +58,6 @@ p {
     background-color: none;
     color: Red;
 }
-
-
-
-
 
 .o-img--centerimg {
     display: block;
