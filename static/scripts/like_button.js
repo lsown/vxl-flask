@@ -111,6 +111,10 @@ ReactDOM.render(
 )
 
 ReactDOM.render(
-  e(combined), 
+  e(inputLabel), 
+  document.querySelector('.panel3')
+)
+ReactDOM.render(
+  e(inputText), 
   document.querySelector('.panel3')
 )
