@@ -1,12 +1,16 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from flask_socketio import SocketIO, emit
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app)
+
 bootstrap = Bootstrap(app)
 
 @app.route('/')
 def index():
   return render_template('index.html')
-  return '<h1>Hello World!</h1>'
 
 @app.route('/base')
 def base():
@@ -24,5 +28,15 @@ def base_bootstrap():
 def user(name):
   return render_template('index.html')
 
+@socketio.on('connect')
+def test_connect():
+    emit('my response', {'data': 'Connected'})
+    emit('random number', {'data': int(random.random() * 100)})
+    print('Client connected')
+
+@socketio.on('disconnect')
+def test_disconnect():
+    print('Client disconnected')
+
 if __name__ == '__main__':
-  app.run(debug=True)
+    socketio.run(debug=True)
