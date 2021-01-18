@@ -22,7 +22,7 @@ def get_host_IP():
 @app.route('/')
 def index():
   ip_info = get_host_IP()
-  return render_template('index.html', ip_address=ip_info[1])
+  return render_template('index.html', host_name=ip_info[0], ip_address=ip_info[1])
 
 @app.route('/base')
 def base():
