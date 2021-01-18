@@ -34,34 +34,23 @@
 
 <main class = "c-mainGrid">
     <div class="c-mainGrid__child">
-        <h2>Panel1</h2>
-        <div class="renderText"></div>
-        <div class="renderInput"></div>
-        <div class="c-panel like_button_container" data-commentid="2"></div>
-        <div class ="c-panel new_like_button_container" data-commentid="1"></div>
+        <div class="c-panel panel1">
+            <h2>Panel1</h2>
+            <form action="/" method="post" id="form1">
+                <label for="input1">Set Filament Voltage: </label>
+                    <input type="text" size="8" maxlength="8" id="input1" name="input1" placeholder="voltage (V)">
+                <button = "submit" name="input1">Submit</button>
+            </form>
+            <form action="/" method="post" id="form1">
+                <label for="input2">Set Filament Current: </label>
+                    <input type="text" size="8" maxlength="8" id="input2" name="input2" placeholder="current (A)">
+                <button = "submit" name="input2">Submit</button>
+            </form>
+        </div>
     </div>
     <div class="c-mainGrid__child">
         <h2>Panel2</h2>
-        <div class="c-panel panel3">
-            <p class="info">Hostname: {{ host_name }}</p>
-            <p class="info">IP Address: {{ ip_address }}</p>
-        </div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel3</h2>
-        <div class="c-panel panel3">
-            <iframe src="http://10.0.0.89:3000/d-solo/RISoycRgk/test-panel?orgId=1&from=1610926141126&to=1610947741126&panelId=2" width="100%" height="100%" frameborder="0"></iframe>
-        </div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel4</h2>
-        <div class ="c-panel panel4">
-            <iframe src="http://{{ ip_address}}:3000/d-solo/RISoycRgk/test-panel?orgId=1&from=1610926141126&to=1610947741126&panelId=2" width="100%" height="100%" frameborder="0"></iframe>
-        </div>
-    </div>
-    <div class="c-mainGrid__child">
-        <h2>Panel5</h2>
-        <div class="c-panel">
+        <div class="c-panel panel2">
             <table class="c-table">
                 <thead>
                     <tr>
@@ -111,18 +100,30 @@
         </div>
     </div>
     <div class="c-mainGrid__child">
+        <h2>Panel3</h2>
+        <div class="c-panel panel3">
+            <iframe src="http://10.0.0.89:3000/d-solo/RISoycRgk/test-panel?orgId=1&from=1610926141126&to=1610947741126&panelId=2" width="100%" height="300px" frameborder="0"></iframe>
+        </div>
+    </div>
+    <div class="c-mainGrid__child">
+        <h2>Panel4</h2>
+        <div class ="c-panel panel4">
+            <p class="info"><strong>Hostname:</strong> {{ host_name }}</p>
+            <p class="info"><strong>IP Address:</strong> {{ ip_address }}</p>
+        </div>
+    </div>
+    <div class="c-mainGrid__child">
+        <h2>Panel5</h2>
+        <div class="c-panel panel5">
+        </div>
+    </div>
+    <div class="c-mainGrid__child">
         <h2>Panel6</h2>
         <div class ="c-panel panel6">
-            <form action="/" method="post" id="form1">
-                <label for="input1">Set Filament Voltage: </label>
-                    <input type="text" size="8" maxlength="8" id="input1" name="input1" placeholder="voltage (V)">
-                <button = "submit" name="input1">Submit</button>
-            </form>
-            <form action="/" method="post" id="form1">
-                <label for="input2">Set Filament Current: </label>
-                    <input type="text" size="8" maxlength="8" id="input2" name="input2" placeholder="current (A)">
-                <button = "submit" name="input2">Submit</button>
-            </form>
+            <div class="renderText"></div>
+            <div class="renderInput"></div>
+            <div class="c-panel like_button_container" data-commentid="2"></div>
+            <div class ="c-panel new_like_button_container" data-commentid="1"></div>    
         </div>
     </div>
 </main>
