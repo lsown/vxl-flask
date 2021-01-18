@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_socketio import SocketIO, emit
+import socket
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -8,9 +9,20 @@ socketio = SocketIO(app)
 
 bootstrap = Bootstrap(app)
 
+def get_host_IP():
+  try:
+      host_name = socket.gethostname() 
+      host_ip = socket.gethostbyname(host_name) 
+      print("Hostname :  ",host_name)
+      print("IP : ",host_ip)
+      return([host_name, host_ip])
+  except: 
+      print("Unable to get Hostname and IP") 
+
 @app.route('/')
 def index():
-  return render_template('index.html')
+  ip_info = get_host_IP()
+  return render_template('index.html', ip_address=ip_info[1])
 
 @app.route('/base')
 def base():
