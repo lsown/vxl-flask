@@ -4,6 +4,7 @@
     box-sizing: border-box; /* border box for predictable design */
     margin: 0;  /* set no default margins for any elements */
     padding: 0; /* set no default padding for any elements */
+    font-family: 'Roboto', sans-serif;
 }
 
 p {
@@ -67,4 +68,11 @@ p {
 
 .c-footer-logo {
     max-width: 25px; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background-color: black;
+    color: white;
 }

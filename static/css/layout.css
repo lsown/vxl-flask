@@ -6,6 +6,11 @@ body {
     row-gap: 0.5rem;    /*vertical distance between header, body, and footer*/
 }
 
+/* controls margin of components we toss into the panel cards */
+.c-panel {
+    margin: 0.5rem;
+}
+
 /*Reference for controlling grid placement: 
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 Adjust this to change layout of content*/
@@ -29,12 +34,16 @@ Adjust this to change layout of content*/
     grid-column: 2 / 3;
 }
 
+.c-voxa-logo {
+    max-width: 100px;
+}
+
 /*Adjust this to change content grid pattern*/
 .c-mainGrid {
     border: black solid 1px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 1 x 1 */
-    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* 1 x 1 */
+    align-items: stretch;
 }
 
 /*Adjust this to change child behavior of grid*/
@@ -49,7 +58,7 @@ Adjust this to change layout of content*/
     border: black solid 1px;
     display: grid;
     grid-template-columns: 2fr 1fr; 
-    align-items: center;
+    align-items: center;    /* can change this for adjusting behavior */
 }
 
 .c-footerGrid__child {
@@ -70,4 +79,72 @@ Adjust this to change layout of content*/
 .c-footer__child-li {
     flex: 0 1 25px; /*lets make it size of img constraint*/
     margin: 0rem 1rem 0rem 1rem;
+}
+
+/* table control example */
+.c-table {
+    table-layout: fixed;
+    width: 100%;    /* let's take up 100% of block */
+    white-space: nowrap;    /* forces content into overflow instead of wrapping */
+}
+
+.c-table th {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: black;
+    color: white;
+}
+
+.c-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    /* forces ... on overflow */
+    border: solid 1px black;
+}
+
+.c-table-th1 {
+    width: 50%;
+    border: solid 1px black;
+}
+
+.c-table-th2 {
+    width: 30%;
+    border: solid 1px black;
+}
+
+.c-table-th3 {
+    width: 20%;
+    border: solid 1px black;
+}
+
+.c-table-descriptor {
+    padding-left: 0.5rem;
+    text-align: left;
+}
+
+.c-table-data {
+    padding-right: 0.5rem;
+    text-align: right;
+}
+
+.c-table-units {
+    padding-left: 0.5rem;
+    text-align: left;
+}
+
+form {
+    border: 1px dashed black;
+    padding: 0.25rem;
+    margin: 0.25rem 0rem;
+}
+
+form label {
+    font-size: 0.9rem;
+    text-decoration: bold;
+    padding-right: 0.5rem;
+}
+
+@media  screen and (max-width: 500px) {
+    .c-mainGrid {
 }

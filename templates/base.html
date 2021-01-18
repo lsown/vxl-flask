@@ -13,9 +13,9 @@
         {% block styles %}
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/layout.css') }}">
-
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         {% endblock %}
-
         {% block title %} 
         <title>Voxa Template</title>
         {% endblock %}
@@ -33,7 +33,7 @@
         <div class="c-headerGrid c-headerGrid-style">
             <div class="c-headerWrapLeft">
                 <a class="c-logo" href="{{ url_for('index') }}">
-                    <img class="c-LSO-logo" 
+                    <img class="c-voxa-logo" 
                     src="{{ url_for('static', filename='images/logo_voxa.png') }}" alt="Voxa Logo">
                 </a>
             </div>                 
@@ -55,7 +55,7 @@
         {% block footer %}
         <footer class="c-footerGrid">
             <div class="c-footerGrid_child">
-                <p>© 2021 Voxa Labs, Inc. All content and imagery the property of Voxa Labs, Inc. unless otherwise noted. All Rights Reserved.</p>
+                <p>© 2021 Voxa Labs, Inc. All Rights Reserved.</p>
             </div>
             <div class="c-footerGrid_child">
                 <ul class="c-footerGrid__child-ul">

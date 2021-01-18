@@ -69,9 +69,6 @@ class NewLikeButton extends React.Component {
     }
   }
 
-
-  
-
 /*
   function Example() {
     // Declare a new state variable, which we'll call "count"  const 
@@ -107,10 +104,8 @@ document.querySelectorAll('.like_button_container')
     );
   });
   
-ReactDOM.render(e(inputLabel), document.querySelector('.panel4'));
+ReactDOM.render(e(inputLabel), document.querySelector('.renderInput'));
 
-
-ReactDOM.render(e(inputText, { name: "rawr"}, null), 
-  document.querySelector('.panel3'));
+ReactDOM.render(e(inputText, { name: "rawr"}, null), document.querySelector('.renderText'));
 
 /* https://reactgo.com/react-createelement-example/ */
