@@ -49,4 +49,5 @@ class SystemStats:
 
     def grab_sysinfo(self):
         # write the measurement
+        self.time = datetime.datetime.utcnow()
         self.ifclient.write_points(self.body)
