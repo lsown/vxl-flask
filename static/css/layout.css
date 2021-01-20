@@ -60,7 +60,7 @@ Adjust this to change layout of content*/
 
 /*Over-rides min-height requirement from Child*/
 .c-mainGrid__child--fullpage {
-    min-height: auto;
+    min-height: 500px;
 }
 
 /* footer control & positioning */
