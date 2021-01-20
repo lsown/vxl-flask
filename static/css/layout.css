@@ -51,18 +51,18 @@ Adjust this to change layout of content*/
     grid-template-columns: 1fr; /*NOTE: THIS OVERRIDES c-mainGrid, but needs to be AFTER c-mainGrid in stylesheet */
 }
 
-/*Adjust this to change child behavior of grid*/
-.c-mainGrid__child-fullpage {
-    border: black solid 1px;
-    margin: 0.5rem;
 
-}
 
 /*Adjust this to change child behavior of grid*/
 .c-mainGrid__child {
     border: black solid 1px;
     margin: 0.5rem;
     min-height: 50px;
+}
+
+/*Over-rides min-height requirement from Child*/
+.c-mainGrid__child-fullpage {
+    min-height: auto;
 }
 
 /* footer control & positioning */
