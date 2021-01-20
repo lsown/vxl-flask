@@ -46,6 +46,13 @@ Adjust this to change layout of content*/
     align-items: stretch;
 }
 
+.c-mainGrid-fullpage {
+    border: black solid 1px;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 x 1 */
+    align-items: stretch;
+}
+
 /*Adjust this to change child behavior of grid*/
 .c-mainGrid__child {
     border: black solid 1px;
