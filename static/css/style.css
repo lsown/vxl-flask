@@ -80,3 +80,8 @@ h2 {
 .info {
     font-size: 0.9rem;
 }
+
+.mainGrid div:nth-child(3) {
+  grid-row-end: 1;
+  grid-column-end: span 3;
+}
