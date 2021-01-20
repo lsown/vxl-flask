@@ -26,6 +26,21 @@ class SystemStats:
         self.load = psutil.getloadavg()
 
         # format the data as a single measurement for influx
+        self.body = []
+
+        # connect to influx
+        self.ifclient = InfluxDBClient(self.ifhost,self.ifport,self.ifuser,self.ifpass,self.ifdb)
+
+    def grab_sysinfo(self):
+        # write the measurement
+        self.update_payload()
+        self.ifclient.write_points(self.body)
+
+    def update_payload(self):
+        self.time = datetime.datetime.utcnow()
+        self.disk = psutil.disk_usage('/')
+        self.mem = psutil.virtual_memory()
+        self.load = psutil.getloadavg()
         self.body = [
             {
                 "measurement": self.measurement_name,
@@ -43,14 +58,3 @@ class SystemStats:
                 }
             }
         ]
-
-        # connect to influx
-        self.ifclient = InfluxDBClient(self.ifhost,self.ifport,self.ifuser,self.ifpass,self.ifdb)
-
-    def grab_sysinfo(self):
-        # write the measurement
-        self.time = datetime.datetime.utcnow()
-        self.disk = psutil.disk_usage('/')
-        self.mem = psutil.virtual_memory()
-        self.load = psutil.getloadavg()
-        self.ifclient.write_points(self.body)
