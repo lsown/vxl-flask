@@ -24,6 +24,10 @@ def index():
   ip_info = get_host_IP()
   return render_template('index.html', host_name=ip_info[0], ip_address=ip_info[1])
 
+@app.route('/grafana')
+def grafana():
+  return render_template('grafana.html')
+
 @app.route('/base')
 def base():
   return render_template('base.html')
