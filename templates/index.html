@@ -1,34 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}<title>Index</title>{% endblock %}
-{% block navbar %}
-<div class="nav">
-    <input type="checkbox" id="nav-check">
-    <div class="nav-header">
-      <div class="nav-title">
-        <a class="c-logo" href="{{ url_for('index') }}">
-            <img class="c-voxa-logo" 
-            src="{{ url_for('static', filename='images/logo_voxa.png') }}" alt="Voxa Logo">
-        </a>
-      </div>
-    </div>
-    <div class="nav-btn">
-      <label for="nav-check">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-    </div>
-    
-    <div class="nav-links">
-      <a href="#1">Tab 1</a>
-      <a href="#2">Tab 2</a>
-      <a href="#3">Tab 3</a>
-      <a href="#4">Tab 4</a>
-      <a href="#5">Tab 5</a>
-    </div>
-  </div>
-{% endblock %}
+
 {%block content %}
 <!--Enter content panel here -->
 
