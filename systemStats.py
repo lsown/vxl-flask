@@ -6,7 +6,7 @@ import psutil
 from influxdb import InfluxDBClient
 
 
-class System_stats:
+class SystemStats:
     def __init__(self):
         logging.basicConfig(format="%(asctime)s: %(message)s", level=logging.DEBUG, datefmt="%H:%M:%S")
         # influx configuration - edit these
@@ -45,7 +45,7 @@ class System_stats:
         ]
 
         # connect to influx
-        self.ifclient = InfluxDBClient(ifhost,ifport,ifuser,ifpass,ifdb)
+        self.ifclient = InfluxDBClient(self.ifhost,self.ifport,self.ifuser,self.ifpass,self.ifdb)
 
     def grab_sysinfo(self):
         # write the measurement
