@@ -47,7 +47,8 @@ Adjust this to change layout of content*/
 }
 
 .c-mainGrid--fullpage {
-    grid-auto-rows:minmax(500px, auto)
+    grid-auto-rows:minmax(500px, auto);
+    grid-template-columns: 1fr; /*NOTE: THIS OVERRIDES c-mainGrid, but needs to be AFTER c-mainGrid in stylesheet */
 }
 
 /*Adjust this to change child behavior of grid*/
