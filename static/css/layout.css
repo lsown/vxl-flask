@@ -54,6 +54,13 @@ Adjust this to change layout of content*/
 }
 
 /*Adjust this to change child behavior of grid*/
+.c-mainGrid__child-fullpage {
+    border: black solid 1px;
+    margin: 0.5rem;
+
+}
+
+/*Adjust this to change child behavior of grid*/
 .c-mainGrid__child {
     border: black solid 1px;
     margin: 0.5rem;
