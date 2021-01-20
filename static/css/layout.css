@@ -11,6 +11,10 @@ body {
     margin: 0.5rem;
 }
 
+.c-panel--graph {
+    min-height: 500px;
+}
+
 /*Reference for controlling grid placement: 
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
 Adjust this to change layout of content*/
@@ -56,11 +60,6 @@ Adjust this to change layout of content*/
     border: black solid 1px;
     margin: 0.5rem;
     min-height: 50px;
-}
-
-/*Over-rides min-height requirement from Child*/
-.c-mainGrid__child--fullpage {
-    min-height: 500px;
 }
 
 /* footer control & positioning */
