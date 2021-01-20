@@ -50,4 +50,7 @@ class SystemStats:
     def grab_sysinfo(self):
         # write the measurement
         self.time = datetime.datetime.utcnow()
+        self.disk = psutil.disk_usage('/')
+        self.mem = psutil.virtual_memory()
+        self.load = psutil.getloadavg()
         self.ifclient.write_points(self.body)
