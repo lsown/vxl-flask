@@ -62,6 +62,10 @@ Adjust this to change layout of content*/
     min-height: 50px;
 }
 
+.c-mainGrid__child--graph {
+    min-height: 500px;
+}
+
 /* footer control & positioning */
 .c-footerGrid {
     border: black solid 1px;
