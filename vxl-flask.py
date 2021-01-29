@@ -89,7 +89,7 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected')
 
-@socketio.on('test_event', methods=['POST', 'GET'])
+@socketio.on('test_event')
 def test_event():
   print(f'Received a test_event')
 
