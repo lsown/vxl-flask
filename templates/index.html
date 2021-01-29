@@ -1,18 +1,7 @@
 {% extends "base.html" %}
 
 {% block morescripts %}
-<script type="text/javascript" charset="utf-8" defer>
-    $(document).ready(function(){
-        var socket = io();
-        socket.on('connect', function() {
-            socket.emit('my_event', {data: 'I\'m connected!'});
-        });
-        $('form#form1').submit(function(event) {
-            socket.emit('test_event', {data: $('#input1').val()});
-            return false;
-        });
-    });
-</script>
+
 {% endblock %}
 
 {% block title %}<title>Index</title>{% endblock %}
