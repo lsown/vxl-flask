@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block morescripts %}
+
+{% endblock %}
+
+{% block title %}<title>WebSockets</title>{% endblock %}
+
+{%block content %}
+<div class="c-mainGrid__child">
+    <h2>Panel7</h2>
+    <div class ="c-panel panel7">
+        <form action="/" method="post" id="form1" action='#'>
+            <label for="input1">Set Filament Voltage: </label>
+                <input type="text" size="8" maxlength="8" id="input1" name="input1" placeholder="voltage (V)">
+            <button = "submit" name="input1">Submit</button>
+        </form>
+        <form id="emit" method="POST" action='#'>
+            <input type="text" name="emit_data" id="emit_data" placeholder="Message">
+            <input type="submit" value="Echo">
+        </form>
+    </div>
+</div>
+{% endblock %}

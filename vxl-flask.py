@@ -68,13 +68,9 @@ def grafana():
 def base():
   return render_template('base.html')
 
-@app.route('/index_bootstrap')
-def index_bootstrap():
-  return render_template('index_bootstrap.html')
-
-@app.route('/base_bootstrap')
-def base_bootstrap():
-  return render_template('base_bootstrap.html')
+@app.route('/websockets')
+def websockets():
+  return render_template('websockets.html')
 
 @app.route('/user/<name>')
 def user(name):
@@ -102,3 +98,13 @@ def my_event():
 
 if __name__ == '__main__':
     socketio.run(debug=True)
+
+"""
+@app.route('/index_bootstrap')
+def index_bootstrap():
+  return render_template('index_bootstrap.html')
+
+@app.route('/base_bootstrap')
+def base_bootstrap():
+  return render_template('base_bootstrap.html')
+  """
