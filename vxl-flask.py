@@ -1,18 +1,20 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
-from flask_socketio import SocketIO, emit
+from flask_socketio import SocketIO, emit, disconnect
 import socket
 from threading import Lock
 import random
 
+async_mode = None
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
+thread = None
+thread_lock = Lock()
 
 bootstrap = Bootstrap(app)
 
-thread = None
-thread_lock = Lock()
+
 
 def get_host_IP():
   try:
