@@ -27,6 +27,18 @@
         <!-- Websocket Scripts-->
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf-8" defer>
+            $(document).ready(function(){
+                var socket = io();
+                socket.on('connect', function() {
+                    socket.emit('my_event', {data: 'I\'m connected!'});
+                });
+                $('form#form1').submit(function(event) {
+                    socket.emit('test_event', {data: $('#input1').val()});
+                    return false;
+                });
+            });
+        </script>
         {% endblock %}
 
         {% block morescripts %}
