@@ -14,8 +14,6 @@ thread_lock = Lock()
 
 bootstrap = Bootstrap(app)
 
-
-
 def get_host_IP():
   try:
       host_name = socket.gethostname() 
@@ -100,6 +98,7 @@ def test_event():
 @socketio.on('my event')
 def my_event():
   print(f'Received my event')
+
 
 if __name__ == '__main__':
     socketio.run(debug=True)
