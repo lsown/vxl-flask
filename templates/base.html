@@ -20,10 +20,10 @@
         {% block scripts %}
         <!-- Load React. -->
         <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin defer></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin defer></script>
         <!-- Load our React component. -->
-        <script src="./static/scripts/like_button.js"></script>
+        <script src="./static/scripts/like_button.js" defer></script>
         <!-- Websocket Scripts-->
         <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -31,7 +31,7 @@
 
         {% block morescripts %}
         {% endblock %}
-        
+
         {% block title %} 
         <title>Voxa Template</title>
         {% endblock %}
