@@ -53,8 +53,7 @@ def backMonitor():
         if thread is None:
             thread = socketio.start_background_task(get_readbacks)
 
-def ack():
-    print 'message was received!'
+
 
 @app.route('/')
 def index():
