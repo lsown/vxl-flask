@@ -89,9 +89,9 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected')
 
-@socketio.on('test_event', methods='POST', 'GET')
-  def test_event():
-    print(f'Received a test_event')
+@socketio.on('test_event', methods=['POST', 'GET'])
+def test_event():
+  print(f'Received a test_event')
 
 if __name__ == '__main__':
     socketio.run(debug=True)
