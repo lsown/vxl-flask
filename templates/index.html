@@ -5,10 +5,6 @@
     $(document).ready(function(){
         var socket = io();
 
-        $('form#form1').submit(function(event) {
-            socket.emit('test_event', {data: $('#input1').val()});
-            return false;
-        });
     });
 </script>
 {% endblock %}
