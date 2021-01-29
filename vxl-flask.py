@@ -95,5 +95,9 @@ def test_disconnect():
 def test_event():
   print(f'Received a test_event')
 
+@socketio.on('my event')
+def my_event():
+  print(f'Received my event')
+
 if __name__ == '__main__':
     socketio.run(debug=True)
