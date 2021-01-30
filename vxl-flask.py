@@ -53,8 +53,6 @@ def backMonitor():
         if thread is None:
             thread = socketio.start_background_task(get_readbacks)
 
-
-
 @app.route('/')
 def index():
   ip_info = get_host_IP()
