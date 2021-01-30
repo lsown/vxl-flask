@@ -37,8 +37,8 @@
             return false;
         });
         document.querySelector('#input1-button').addEventListener('click', () => {
-            socket.emit('input1_event', {data: document.querySelector('#input1').value});
-            document.querySelector('#input1').value = '';
+            socket.emit('input1_event', {data: document.querySelector('#input1-text').value});
+            document.querySelector('#input1-text').value = '';
             return false;
         });
         /*$('form#form1').submit(function(event) {
