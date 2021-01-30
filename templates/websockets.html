@@ -11,6 +11,7 @@
         <form id="form1" action="/" method="post" action="#">
             <label for="input1">Set Filament Voltage: </label>
                 <input type="text" size="8" maxlength="8" id="input1-text" name="input1" placeholder="voltage (V)">
+                <span class="validity"></span>
             <button name="input1" id="input1-button" type="button">Submit</button>
         </form>
         <form id="emit" method="POST" action='#'>
@@ -25,6 +26,7 @@
 <script type="text/javascript" charset="utf-8">
     $(document).ready(function(){
         var socket = io();
+        let input1Text= document.querySelector('#input1-text')
         socket.on('my response', function(msg) {
             $('#log').append('<p>Received: ' + msg.data + '</p>');
         });
@@ -37,9 +39,10 @@
             return false;
         });
         document.querySelector('#input1-button').addEventListener('click', () => {
-            socket.emit('input1_event', {data: document.querySelector('#input1-text').value});
-            document.querySelector('#input1-text').value = '';
-            return false;
+            
+            socket.emit('input1_event', {data: document.querySelector('#input1-text').value}); //send value from id to server
+            document.querySelector('#input1-text').value = ''; //reset to blank
+            return false;   //return false is to prevent normal data route
         });
         /*$('form#form1').submit(function(event) {
             socket.emit('input1_event', {data: document.querySelector('#input1').value});
