@@ -98,8 +98,8 @@ def my_event(message):
 @socketio.on('input1_event')
 def my_event(message):
   x = message['data']
-  print(f'Received my event { x }')
-
+  print(f'Received input1 event { x }')
+  emit('input1_response', {'data': x})
 
 if __name__ == '__main__':
     socketio.run(debug=True)
