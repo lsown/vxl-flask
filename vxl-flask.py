@@ -95,9 +95,9 @@ def test_event():
 def my_event(message):
   print(f'Received my event { message }')
 
-@socketio.on('my event')
+@socketio.on('input1_event')
 def my_event(message):
-  print(f'Received my event { message }')
+  print(f'Received my event { message['data'] }')
 
 
 if __name__ == '__main__':

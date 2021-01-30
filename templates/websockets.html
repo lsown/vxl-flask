@@ -8,7 +8,7 @@
 <div class="c-mainGrid__child">
     <h2>Panel7</h2>
     <div class ="c-panel panel7">
-        <form action="/" method="post" id="form1" action='#'>
+        <form id="form1" action="/" method="post" action='#'>
             <label for="input1">Set Filament Voltage: </label>
                 <input type="text" size="8" maxlength="8" id="input1" name="input1" placeholder="voltage (V)">
             <button = "submit" name="input1">Submit</button>
@@ -30,6 +30,10 @@
         });
         $('form#emit').submit(function(event) {
             socket.emit('my event', {data: $('#emit_data').val()});
+            return false;
+        });
+        $('form#form1').submit(function(event) {
+            socket.emit('input1_event', {data: $('#input1').val()});
             return false;
         });
         $('form#broadcast').submit(function(event) {
