@@ -37,7 +37,7 @@
             socket.emit('my event', {data: $('#emit_data').val()});
             return false;
         });
-        input1Button.addEventListener('submit', () => {
+        input1Button.addEventListener('click', () => {
             socket.emit('input1_event', {data: document.querySelector('#input1').value});
             document.querySelector('#input1').value = '';
             return false;
