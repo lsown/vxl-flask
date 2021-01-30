@@ -95,6 +95,10 @@ def test_event():
 def my_event(message):
   print(f'Received my event { message }')
 
+@socketio.on('my event')
+def my_event(message):
+  print(f'Received my event { message }')
+
 
 if __name__ == '__main__':
     socketio.run(debug=True)
