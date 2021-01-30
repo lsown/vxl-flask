@@ -97,7 +97,8 @@ def my_event(message):
 
 @socketio.on('input1_event')
 def my_event(message):
-  print(f'Received my event { message }')
+  x = message['data']
+  print(f'Received my event { x }')
 
 
 if __name__ == '__main__':
