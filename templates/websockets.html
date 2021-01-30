@@ -29,6 +29,7 @@
             $('#log').append('<p>Received: ' + msg.data + '</p>');
         });
         socket.on('input1_response', function(msg) {
+            console.log('received data' + msg.data)
             document.querySelector('#input1').setAttribute('placeholder', msg.data)
         })
         $('form#emit').submit(function(event) {
