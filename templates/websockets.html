@@ -29,7 +29,7 @@
             $('#log').append('<p>Received: ' + msg.data + '</p>');
         });
         socket.on('input1_response', function(msg) {
-            console.log('received data' + msg.data)
+            console.log('received data: ' + msg.data)
             document.querySelector('#input1').setAttribute('placeholder', msg.data)
         })
         $('form#emit').submit(function(event) {
@@ -38,6 +38,7 @@
         });
         $('form#form1').submit(function(event) {
             socket.emit('input1_event', {data: $('#input1').val()});
+            document.querySelector('#input1').value = '';
             return false;
         });
         $('form#broadcast').submit(function(event) {
