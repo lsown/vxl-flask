@@ -127,18 +127,18 @@
         The click event listener is needed for the button, keydown is required for using enter as input.*/
         socket.on('input2_response', function(msg) {
             console.log('received data: ' + msg.data)
-            document.querySelector('#input2-number').setAttribute('value', ('set:' + msg.data))
+            //document.querySelector('#input2-number').setAttribute('placeholder', ('set:' + msg.data))
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
         document.querySelector('#input2-button').addEventListener('click', () => {
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
-            document.querySelector('#input2-number').value = ''; //reset to blank
+            //document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
         });
         document.querySelector('#input2-number').onkeydown = function(e) {
             if(e.keyCode == 13) {
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
-            document.querySelector('#input2-number').value = ''; //reset to blank
+            //document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
             }
         };
