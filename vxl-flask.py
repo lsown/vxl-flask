@@ -49,7 +49,7 @@ def emit_ws_table(polltime = 1):
             {'data' : ws_table}) #try adding it to namespace='/readbacks' later
         print(f'Readback from rowA: {ws_table["tableData"]["rowA"][0]}: {ws_table["tableData"]["rowA"][1]} {ws_table["tableData"]["rowA"][2]}')  #for validation purposes
 
-def backMonitor():
+def emit_thread():
     global thread
     with thread_lock:
         if thread is None:
@@ -81,7 +81,7 @@ def test_connect():
     emit('my response', {'data': 'Connected'})
     #emit('random number', {'data': int(random.random() * 100)})
     #print('Client connected')
-    backMonitor()
+    emit_thread()
 
 @socketio.on('disconnect')
 def test_disconnect():
