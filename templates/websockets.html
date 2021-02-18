@@ -139,7 +139,9 @@
             if(e.keyCode == 13) {
                 let inputNumber = document.querySelector('#input2-number')
                 if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
-                    {console.log("bad input detected")}
+                    {console.log("bad input detected");
+                    alert("Bad value")
+                    return}
                 else 
                     {console.log("content ok!")}
                 socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
