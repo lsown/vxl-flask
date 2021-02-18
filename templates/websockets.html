@@ -83,7 +83,7 @@ input + span {
 
         document.querySelector('#input2-button').addEventListener('click', () => {
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
-            document.querySelector('#input2-number').value = ''; //reset to blank
+            //document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
         });
 
