@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block styles %}
-
 {{ super() }}
 <style type="text/css">  
   .form-number {
@@ -10,7 +9,7 @@
 </style>
 {% endblock %}
 
-{% block title %}<title>WebSockets</title>{% endblock %}
+{% block title %}<title>WebSocket Example Page</title>{% endblock %}
 
 {% block content %}
 <main class = "c-mainGrid">
@@ -116,6 +115,30 @@
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
 
+        $('form#emit').submit(function(event) {
+            socket.emit('my event', {data: $('#emit_data').val()});
+            return false;
+        });
+        document.querySelector('#input1-button').addEventListener('click', () => {
+            socket.emit('input1_event', {data: document.querySelector('#input1-text').value}); //send value from id to server
+            document.querySelector('#input1-text').value = ''; //reset to blank
+            return false;   //return false is to prevent normal data route
+        });
+
+        document.querySelector('#input2-button').addEventListener('click', () => {
+            socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
+            document.querySelector('#input2-number').value = ''; //reset to blank
+            return false;   //return false is to prevent normal data route
+        });
+
+        document.querySelector('#input2-number').onkeydown = function(e) {
+            if(e.keyCode == 13) {
+            socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
+            document.querySelector('#input2-number').value = ''; //reset to blank
+            return false;   //return false is to prevent normal data route
+            }
+        };
+
         //Example table ADC readback. Looks for emit packet
         socket.on('readback_msg', function(msg) {
             let tableHead = msg.data['tableHead']
@@ -156,22 +179,6 @@
             document.querySelector('#rowG2').textContent = tableData['rowG'][2]
             document.querySelector('#rowH2').textContent = tableData['rowH'][2]
         })
-
-        $('form#emit').submit(function(event) {
-            socket.emit('my event', {data: $('#emit_data').val()});
-            return false;
-        });
-        document.querySelector('#input1-button').addEventListener('click', () => {
-            socket.emit('input1_event', {data: document.querySelector('#input1-text').value}); //send value from id to server
-            document.querySelector('#input1-text').value = ''; //reset to blank
-            return false;   //return false is to prevent normal data route
-        });
-
-        document.querySelector('#input2-button').addEventListener('click', () => {
-            socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
-            document.querySelector('#input2-number').value = ''; //reset to blank
-            return false;   //return false is to prevent normal data route
-        });
 
         /*$('form#form1').submit(function(event) {
             socket.emit('input1_event', {data: document.querySelector('#input1').value});
