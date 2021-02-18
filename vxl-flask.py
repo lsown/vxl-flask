@@ -39,7 +39,7 @@ rb_dict = {
       }
     }
 
-def get_readbacks(polltime = 2):
+def get_readbacks(polltime = 1):
     print(f'Starting readback polling every { polltime } second.')
     while True:
         socketio.sleep(polltime)
