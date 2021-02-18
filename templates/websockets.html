@@ -150,7 +150,6 @@
             if(e.keyCode == 13) {
                 if (inputNumber.validity.valid != true)
                     {console.log("bad input detected");
-                    //alert("Bad value - Keep within 0-10V range & numerical input")
                     alert(inputNumber.validationMessage)
                     return}
                 else 
@@ -165,11 +164,7 @@
         socket.on('sample_table', function(msg) {
             let tableHead = msg.data['tableHead']
             let tableData = msg.data['tableData']
-            console.log(
-                'received data from sample_table: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
-                tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
-                tableData['rowG'][1] + tableData['rowH'][1])
-
+            console.log('Received data from sample_table')
             for (let i=0; i < 3; i++) {
                 document.querySelector('#tableHead'+i).textContent = tableHead[i]
                 document.querySelector('#rowA'+i).textContent = tableData['rowA'][i]
