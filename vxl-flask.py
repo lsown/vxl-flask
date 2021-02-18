@@ -53,8 +53,6 @@ def backMonitor():
         if thread is None:
             thread = socketio.start_background_task(get_readbacks)
 
-
-
 @app.route('/')
 def index():
   ip_info = get_host_IP()
@@ -95,6 +93,11 @@ def test_event():
 def my_event(message):
   print(f'Received my event { message }')
 
+@socketio.on('input1_event')
+def my_event(message):
+  x = str(message['data'] + 'V')
+  print(f'Received input1 event { x }')
+  emit('input1_response', {'data': x})
 
 if __name__ == '__main__':
     socketio.run(debug=True)
