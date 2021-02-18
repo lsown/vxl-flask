@@ -48,7 +48,7 @@ def get_readbacks(polltime = 2):
             rb_dict[i][2] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
             {'data' : rb_dict}) #try adding it to namespace='/readbacks' later
-        print(f'Representative readback from rb0: {rb_dict["rowA"][0]}')  #for validation purposes
+        print(f'Representative readback from rb0: {rb_dict["rowA"][0]}:{rb_dict["rowA"][1]}:{rb_dict["rowA"][2]}')  #for validation purposes
 
 def backMonitor():
     global thread
