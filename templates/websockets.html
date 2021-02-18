@@ -52,38 +52,43 @@
             <tbody>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-A</td>
-                    <td class='c-table-data'>Data-A</td>
+                    <td class='c-table-data' id='rb0'>Data-A</td>
                     <td class='c-table-units'>Units-A</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-B</td>
-                    <td class='c-table-data'>Data-B</td>
+                    <td class='c-table-data' id='rb1'>Data-B</td>
                     <td class='c-table-units'>Units-B</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-C</td>
-                    <td class='c-table-data'>Data-C</td>
+                    <td class='c-table-data' id='rb2'>Data-C</td>
                     <td class='c-table-units'>Units-C</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-D</td>
-                    <td class='c-table-data'>Data-D</td>
+                    <td class='c-table-data' id='rb3'>Data-D</td>
                     <td class='c-table-units'>Units-D</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-E</td>
-                    <td class='c-table-data'>Data-E</td>
+                    <td class='c-table-data' id='rb4'>Data-E</td>
                     <td class='c-table-units'>Units-E</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-F</td>
-                    <td class='c-table-data'>Data-F</td>
+                    <td class='c-table-data' id='rb5'>Data-F</td>
                     <td class='c-table-units'>Units-F</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-G</td>
-                    <td class='c-table-data'>Data-G</td>
+                    <td class='c-table-data' id='rb6'>Data-G</td>
                     <td class='c-table-units'>Units-G</td>
+                </tr>
+                <tr>
+                    <td class='c-table-descriptor'>Descriptor-H</td>
+                    <td class='c-table-data' id='rb7'>Data-H</td>
+                    <td class='c-table-units'>Units-H</td>
                 </tr>
             </tbody>
         </table>
@@ -112,6 +117,9 @@
         socket.on('readback_msg', function(msg) {
             console.log('received data from readback_msg: ' + msg.data['rb0'] + msg.data['rb1'] + 
             msg.data['rb2'] + msg.data['rb3'] + msg.data['rb4'] + msg.data['rb5'] + msg.data['rb6'] + msg.data['rb7'])
+            document.querySelector('#rb0').textContent = msg.data['rb0']
+            document.querySelector('#rb1').textContent = msg.data['rb1']
+            document.querySelector('#rb2').textContent = msg.data['rb2']
         })
 
         $('form#emit').submit(function(event) {
