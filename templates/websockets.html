@@ -33,8 +33,8 @@ input + span {
     <div class ="c-panel panel7">
         <!--Example text form-->
         <form id="form1" action="/" method="post" action="#">
-            <label for="input1">Set Filament Voltage: </label>
-                <input type="text" size="8" maxlength="8" id="input1-text" name="input1" placeholder="voltage (V)">
+            <label for="input1">Enter text here: </label>
+                <input type="text" size="8" maxlength="14" id="input1-text" name="input1" placeholder="text here">
                 <span class="validity"></span>
             <button name="input1" id="input1-button" type="button">Submit</button>
         </form>
@@ -65,12 +65,12 @@ input + span {
         });
         socket.on('input1_response', function(msg) {
             console.log('received data: ' + msg.data)
-            document.querySelector('#input1-text').setAttribute('placeholder', msg.data)
+            //document.querySelector('#input1-text').setAttribute('placeholder', msg.data)
         })
         socket.on('input2_response', function(msg) {
             console.log('received data: ' + msg.data)
             //document.querySelector('#input2-number').setAttribute('value', msg.data)
-            document.querySelector('#testtoss').textContent = msg.data + 'V'
+            document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
 
         $('form#emit').submit(function(event) {
