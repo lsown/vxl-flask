@@ -170,6 +170,19 @@
                 tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
                 tableData['rowG'][1] + tableData['rowH'][1])
 
+            for (let i=0; i < 3; i++) {
+                document.querySelector('#tableHead'+i).textContent = tableHead[i]
+                document.querySelector('#rowA'+i).textContent = tableData['rowA'][i]
+                document.querySelector('#rowB'+i).textContent = tableData['rowB'][i]
+                document.querySelector('#rowC'+i).textContent = tableData['rowC'][i]
+                document.querySelector('#rowD'+i).textContent = tableData['rowD'][i]
+                document.querySelector('#rowE'+i).textContent = tableData['rowE'][i]
+                document.querySelector('#rowF'+i).textContent = tableData['rowF'][i]
+                document.querySelector('#rowG'+i).textContent = tableData['rowG'][i]
+                document.querySelector('#rowH'+i).textContent = tableData['rowH'][i]
+              }
+
+            /*
             document.querySelector('#tableHead0').textContent = tableHead[0]
             document.querySelector('#tableHead1').textContent = tableHead[1]
             document.querySelector('#tableHead2').textContent = tableHead[2]
@@ -200,6 +213,7 @@
             document.querySelector('#rowF2').textContent = tableData['rowF'][2]
             document.querySelector('#rowG2').textContent = tableData['rowG'][2]
             document.querySelector('#rowH2').textContent = tableData['rowH'][2]
+            */
         })
 
         $('form#emit').submit(function(event) {
