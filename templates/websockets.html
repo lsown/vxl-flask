@@ -13,87 +13,89 @@
 {% block title %}<title>WebSockets</title>{% endblock %}
 
 {% block content %}
-<div class="c-mainGrid__child">
-    <h2>Websocket Forms</h2>
-    <div class ="c-panel panel7">
-        <!--Example text form-->
-        <form id="form1" action="/" method="post" action="#">
-            <label for="input1">Enter text here: </label>
-                <input type="text" size="8" maxlength="14" id="input1-text" name="input1" placeholder="text here">
-                <span class="validity"></span>
-            <button name="input1" id="input1-button" type="button">Submit</button>
-        </form>
-        <!--Example numerical form-->
-        <form id="form2" action="/" method="post" action="#">
-            <label for="input2">Set Filament Voltage: </label>
-                <input type="number" class="form-number" id="input2-number" name="input2" value="" placeholder="voltage (V)" 
-                step="0.10" min="0" max="10">
-            <button name="input2" id="input2-button" type="button">Submit</button>
-            <span id='testtoss'>0 V</span>
-        </form>
+<main class = "c-mainGrid">
+    <div class="c-mainGrid__child">
+        <h2>Websocket Forms</h2>
+        <div class ="c-panel panel7">
+            <!--Example text form-->
+            <form id="form1" action="/" method="post" action="#">
+                <label for="input1">Enter text here: </label>
+                    <input type="text" size="8" maxlength="14" id="input1-text" name="input1" placeholder="text here">
+                    <span class="validity"></span>
+                <button name="input1" id="input1-button" type="button">Submit</button>
+            </form>
+            <!--Example numerical form-->
+            <form id="form2" action="/" method="post" action="#">
+                <label for="input2">Set Filament Voltage: </label>
+                    <input type="number" class="form-number" id="input2-number" name="input2" value="" placeholder="voltage (V)" 
+                    step="0.10" min="0" max="10">
+                <button name="input2" id="input2-button" type="button">Submit</button>
+                <span id='testtoss'>0 V</span>
+            </form>
 
-        <form id="emit" method="POST" action='#'>
-            <input type="text" name="emit_data" id="emit_data" placeholder="Message">
-            <input type="submit" value="Echo">
-        </form>
+            <form id="emit" method="POST" action='#'>
+                <input type="text" name="emit_data" id="emit_data" placeholder="Message">
+                <input type="submit" value="Echo">
+            </form>
+        </div>
     </div>
-</div>
-<div class="c-mainGrid__child">
-    <h2>Websocket Table</h2>
-    <div class="c-panel panel2">
-        <table class="c-table">
-            <thead>
-                <tr>
-                    <th scope="col" class="c-table-th1" id="tableHead0">Descriptor Head</th>
-                    <th scope="col" class="c-table-th2" id="tableHead1">Data Head</th>
-                    <th scope="col" class="c-table-th3" id="tableHead2">Units Head</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class='c-table-descriptor' id='rowA0'>Descriptor-A</td>
-                    <td class='c-table-data' id='rowA1'>Data-A</td>
-                    <td class='c-table-units' id='rowA2'>Units-A</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowB0'>Descriptor-B</td>
-                    <td class='c-table-data' id='rowB1'>Data-B</td>
-                    <td class='c-table-units' id='rowB2'>Units-B</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowC0'>Descriptor-C</td>
-                    <td class='c-table-data' id='rowC1'>Data-C</td>
-                    <td class='c-table-units' id='rowC2'>Units-C</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor'id='rowD0'>Descriptor-D</td>
-                    <td class='c-table-data' id='rowD1'>Data-D</td>
-                    <td class='c-table-units'id='rowD2'>Units-D</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowE0'>Descriptor-E</td>
-                    <td class='c-table-data' id='rowE1'>Data-E</td>
-                    <td class='c-table-units'id='rowE2'>Units-E</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowF0'>Descriptor-F</td>
-                    <td class='c-table-data' id='rowF1'>Data-F</td>
-                    <td class='c-table-units' id='rowF2'>Units-F</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowG0'>Descriptor-G</td>
-                    <td class='c-table-data' id='rowG1'>Data-G</td>
-                    <td class='c-table-units' id='rowG2'>Units-G</td>
-                </tr>
-                <tr>
-                    <td class='c-table-descriptor' id='rowH0'>Descriptor-H</td>
-                    <td class='c-table-data' id='rowH1'>Data-H</td>
-                    <td class='c-table-units' id='rowH2'>Units-H</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="c-mainGrid__child">
+        <h2>Websocket Table</h2>
+        <div class="c-panel panel2">
+            <table class="c-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="c-table-th1" id="tableHead0">Descriptor Head</th>
+                        <th scope="col" class="c-table-th2" id="tableHead1">Data Head</th>
+                        <th scope="col" class="c-table-th3" id="tableHead2">Units Head</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowA0'>Descriptor-A</td>
+                        <td class='c-table-data' id='rowA1'>Data-A</td>
+                        <td class='c-table-units' id='rowA2'>Units-A</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowB0'>Descriptor-B</td>
+                        <td class='c-table-data' id='rowB1'>Data-B</td>
+                        <td class='c-table-units' id='rowB2'>Units-B</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowC0'>Descriptor-C</td>
+                        <td class='c-table-data' id='rowC1'>Data-C</td>
+                        <td class='c-table-units' id='rowC2'>Units-C</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor'id='rowD0'>Descriptor-D</td>
+                        <td class='c-table-data' id='rowD1'>Data-D</td>
+                        <td class='c-table-units'id='rowD2'>Units-D</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowE0'>Descriptor-E</td>
+                        <td class='c-table-data' id='rowE1'>Data-E</td>
+                        <td class='c-table-units'id='rowE2'>Units-E</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowF0'>Descriptor-F</td>
+                        <td class='c-table-data' id='rowF1'>Data-F</td>
+                        <td class='c-table-units' id='rowF2'>Units-F</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowG0'>Descriptor-G</td>
+                        <td class='c-table-data' id='rowG1'>Data-G</td>
+                        <td class='c-table-units' id='rowG2'>Units-G</td>
+                    </tr>
+                    <tr>
+                        <td class='c-table-descriptor' id='rowH0'>Descriptor-H</td>
+                        <td class='c-table-data' id='rowH1'>Data-H</td>
+                        <td class='c-table-units' id='rowH2'>Units-H</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+</main>
 {% endblock %}
 
 {% block morescripts %}
@@ -114,6 +116,7 @@
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
 
+        //Example table ADC readback. Looks for emit packet
         socket.on('readback_msg', function(msg) {
             let tableHead = msg.data['tableHead']
             let tableData = msg.data['tableData']
