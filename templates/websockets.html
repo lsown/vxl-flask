@@ -109,6 +109,10 @@
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
 
+        socket.on('readback_msg', function(msg) {
+            console.log('received data: ' + msg.data)
+        })
+
         $('form#emit').submit(function(event) {
             socket.emit('my event', {data: $('#emit_data').val()});
             return false;
