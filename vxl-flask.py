@@ -100,7 +100,7 @@ def input1_event(message):
   emit('input1_response', {'data': x})
 
 @socketio.on('input2_event')
-def input1_event(message):
+def input2_event(message):
   x = message['data']
   print(f'Received input2 event { x }')
   emit('input2_response', {'data': x})
