@@ -80,6 +80,13 @@ input + span {
             document.querySelector('#input1-text').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
         });
+
+        document.querySelector('#input2-button').addEventListener('click', () => {
+            socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
+            document.querySelector('#input2-number').value = ''; //reset to blank
+            return false;   //return false is to prevent normal data route
+        });
+
         /*$('form#form1').submit(function(event) {
             socket.emit('input1_event', {data: document.querySelector('#input1').value});
             document.querySelector('#input1').value = '';
