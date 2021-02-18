@@ -132,9 +132,9 @@
         })
         let inputNumber = document.querySelector('#input2-number')
         document.querySelector('#input2-button').addEventListener('click', () => {
-            if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
-                {console.log("bad input detected");
-                alert("Bad value - Keep within 0-10V range & numerical input")
+            if (inputNumber.validity.valid != true)
+            {console.log("bad input detected");
+                alert(inputNumber.validationMessage)
                 return}
             else 
                 {console.log("content ok!")}
