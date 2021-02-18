@@ -131,6 +131,12 @@
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
         document.querySelector('#input2-button').addEventListener('click', () => {
+            if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
+                {console.log("bad input detected");
+                alert("Bad value - Keep within 0-10V range & numerical input")
+                return}
+            else 
+                {console.log("content ok!")}
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
             //document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
@@ -140,7 +146,7 @@
                 let inputNumber = document.querySelector('#input2-number')
                 if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
                     {console.log("bad input detected");
-                    alert("Bad value - Keep within range & number")
+                    alert("Bad value - Keep within 0-10V range & numerical input")
                     return}
                 else 
                     {console.log("content ok!")}
