@@ -42,10 +42,10 @@ def get_readbacks(polltime = 2):
     while True:
         socketio.sleep(polltime)
         for i in rb_dict:
-          if i[2] == 'Data':
+          if rb_dict[i][2] == 'Data':
             pass
           else:
-            i[2] = random.randrange(0, 10)
+            rb_dict[i][2] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
             {'data' : rb_dict}) #try adding it to namespace='/readbacks' later
         print(f'Representative readback from rb0: {rb_dict["rowA"][0]}')  #for validation purposes
