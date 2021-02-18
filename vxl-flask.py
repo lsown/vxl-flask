@@ -15,16 +15,6 @@ thread_lock = Lock()
 
 bootstrap = Bootstrap(app)
 
-def get_host_IP():
-  try:
-      host_name = socket.gethostname() 
-      host_ip = socket.gethostbyname(host_name) 
-      print("Hostname :  ",host_name)
-      print("IP : ",host_ip)
-      return([host_name, host_ip])
-  except: 
-      print("Unable to get Hostname and IP") 
-
 def get_comms():
   try:
     host_name = socket.gethostname()

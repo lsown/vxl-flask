@@ -58,5 +58,3 @@ class SystemStats:
                 }
             }
         ]
-
-    def pollevery10(self):
