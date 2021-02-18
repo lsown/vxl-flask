@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_socketio import SocketIO, emit, disconnect
 import socket
+import netifaces
 from threading import Lock
 import random
 
@@ -24,6 +25,16 @@ def get_host_IP():
   except: 
       print("Unable to get Hostname and IP") 
 
+def get_comms():
+  try:
+    host_name = socket.gethostname()
+    netifaces.ifaddresses('eth0')
+    eth_ip = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
+    wlan_ip = netifaces.ifaddresses('wlan0')[netifaces.AF_INET][0]['addr']
+    print(f'Host name: {host_name} - Eth IP: {eth_ip} - wlan IP: {wlan_ip}')
+    return([host_name, eth_ip, wlan_ip])
+  except:
+    print('Unable to get hostname & IP!')
 
 ws_table = {
     'tableHead' : ['Description', 'Values', 'Units'],
@@ -58,7 +69,7 @@ def emit_thread():
 @app.route('/')
 def index():
   ip_info = get_host_IP()
-  return render_template('index.html', host_name=ip_info[0], ip_address=ip_info[1])
+  return render_template('index.html', host_name=ip_info[0], eth_ip=ip_info[1], wlan_ip=ip_info[2])
 
 @app.route('/grafana')
 def grafana():
