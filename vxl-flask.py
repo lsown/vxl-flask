@@ -45,7 +45,7 @@ def get_readbacks(polltime = 1):
         socketio.emit('readback_msg', 
             {'data' : rb_dict}, 
             namespace='/readbacks')
-        print(f'Representative readback from rb0: {rb_dict['rb0']}')
+        print(f'Representative readback from rb0: {rb_dict["rb0"]}')
 
 def backMonitor():
     global thread
