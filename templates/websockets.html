@@ -6,6 +6,10 @@
   .form-number {
       width: 6rem;
   }
+
+  input:invalid:required {
+      border: 2px solid red;
+  }
 </style>
 {% endblock %}
 
@@ -26,8 +30,8 @@
             <!--Example numerical form-->
             <form id="form2" action="/" method="" action="#">
                 <label for="input2">Set Filament Voltage: </label>
-                    <input type="number" class="form-number" id="input2-number" name="input2" value="" placeholder="voltage (V)" 
-                    step="0.10" min="0" max="10">
+                    <input type="number" class="form-number" id="input2-number" name="input2" placeholder="voltage (V)" 
+                    step="0.10" min="0" max="10" required>
                 <button name="input2" id="input2-button" type="button">Submit</button>
                 <span id='testtoss'>0 V</span>
             </form>
@@ -109,28 +113,24 @@
             console.log('received data: ' + msg.data)
             //document.querySelector('#input1-text').setAttribute('placeholder', msg.data)
         })
-        socket.on('input2_response', function(msg) {
-            console.log('received data: ' + msg.data)
-            //document.querySelector('#input2-number').setAttribute('value', msg.data)
-            document.querySelector('#testtoss').textContent = msg.data + ' V'
-        })
-
-        $('form#emit').submit(function(event) {
-            socket.emit('my event', {data: $('#emit_data').val()});
-            return false;
-        });
         document.querySelector('#input1-button').addEventListener('click', () => {
             socket.emit('input1_event', {data: document.querySelector('#input1-text').value}); //send value from id to server
             document.querySelector('#input1-text').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
         });
 
+        /*Below are related to a ws_form numerical example. The socket.on is looking for an ws msg "input2_response."
+        The click event listener is needed for the button, keydown is required for using enter as input.*/
+        socket.on('input2_response', function(msg) {
+            console.log('received data: ' + msg.data)
+            //document.querySelector('#input2-number').setAttribute('value', msg.data)
+            document.querySelector('#testtoss').textContent = msg.data + ' V'
+        })
         document.querySelector('#input2-button').addEventListener('click', () => {
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
             document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
         });
-
         document.querySelector('#input2-number').onkeydown = function(e) {
             if(e.keyCode == 13) {
             socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
@@ -180,6 +180,10 @@
             document.querySelector('#rowH2').textContent = tableData['rowH'][2]
         })
 
+        $('form#emit').submit(function(event) {
+            socket.emit('my event', {data: $('#emit_data').val()});
+            return false;
+        });
         /*$('form#form1').submit(function(event) {
             socket.emit('input1_event', {data: document.querySelector('#input1').value});
             document.querySelector('#input1').value = '';
