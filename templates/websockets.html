@@ -110,7 +110,7 @@
         })
 
         socket.on('readback_msg', function(msg) {
-            console.log('received data: ' + msg.data['rb_dict'])
+            console.log('received data: ' + msg.data['rb_dict'][0])
         })
 
         $('form#emit').submit(function(event) {
