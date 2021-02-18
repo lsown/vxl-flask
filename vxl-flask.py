@@ -27,14 +27,14 @@ def get_host_IP():
 
 rb_dict = {
     'tableHead' : ['Description', 'Data', 'Units'],
-    'rowA':['Filament Voltage', random.randrange(0,10), V],
-    'rowB':['Filament Current', random.randrange(0,10), A],
-    'rowC':['Stage Voltage', random.randrange(0,10), mV],
-    'rowD':['Stage Current', random.randrange(0,10), uA],
-    'rowE':['Source Voltage', random.randrange(0,10), kV],
-    'rowF':['Pressure', random.randrange(0,10), Torr],
-    'rowG':['Lumens', random.randrange(0,10), V],
-    'rowH':['Temperature', random.randrange(0,10), C]
+    'rowA':['Filament Voltage', random.randrange(0,10), 'V'],
+    'rowB':['Filament Current', random.randrange(0,10), 'A'],
+    'rowC':['Stage Voltage', random.randrange(0,10), 'mV'],
+    'rowD':['Stage Current', random.randrange(0,10), 'uA'],
+    'rowE':['Source Voltage', random.randrange(0,10), 'kV'],
+    'rowF':['Pressure', random.randrange(0,10), 'Torr],
+    'rowG':['Lumens', random.randrange(0,10), 'V'],
+    'rowH':['Temperature', random.randrange(0,10), 'C']
     }
 
 def get_readbacks(polltime = 2):
