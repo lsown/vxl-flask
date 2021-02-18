@@ -162,11 +162,11 @@
         };
 
         //Example table ADC readback. Looks for emit packet
-        socket.on('readback_msg', function(msg) {
+        socket.on('sample_table', function(msg) {
             let tableHead = msg.data['tableHead']
             let tableData = msg.data['tableData']
             console.log(
-                'received data from readback_msg: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
+                'received data from sample_table: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
                 tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
                 tableData['rowG'][1] + tableData['rowH'][1])
 
@@ -181,39 +181,6 @@
                 document.querySelector('#rowG'+i).textContent = tableData['rowG'][i]
                 document.querySelector('#rowH'+i).textContent = tableData['rowH'][i]
               }
-
-            /*
-            document.querySelector('#tableHead0').textContent = tableHead[0]
-            document.querySelector('#tableHead1').textContent = tableHead[1]
-            document.querySelector('#tableHead2').textContent = tableHead[2]
-
-            document.querySelector('#rowA0').textContent = tableData['rowA'][0]
-            document.querySelector('#rowB0').textContent = tableData['rowB'][0]
-            document.querySelector('#rowC0').textContent = tableData['rowC'][0]
-            document.querySelector('#rowD0').textContent = tableData['rowD'][0]
-            document.querySelector('#rowE0').textContent = tableData['rowE'][0]
-            document.querySelector('#rowF0').textContent = tableData['rowF'][0]
-            document.querySelector('#rowG0').textContent = tableData['rowG'][0]
-            document.querySelector('#rowH0').textContent = tableData['rowH'][0]
-
-            document.querySelector('#rowA1').textContent = tableData['rowA'][1]
-            document.querySelector('#rowB1').textContent = tableData['rowB'][1]
-            document.querySelector('#rowC1').textContent = tableData['rowC'][1]
-            document.querySelector('#rowD1').textContent = tableData['rowD'][1]
-            document.querySelector('#rowE1').textContent = tableData['rowE'][1]
-            document.querySelector('#rowF1').textContent = tableData['rowF'][1]
-            document.querySelector('#rowG1').textContent = tableData['rowG'][1]
-            document.querySelector('#rowH1').textContent = tableData['rowH'][1]
-
-            document.querySelector('#rowA2').textContent = tableData['rowA'][2]
-            document.querySelector('#rowB2').textContent = tableData['rowB'][2]
-            document.querySelector('#rowC2').textContent = tableData['rowC'][2]
-            document.querySelector('#rowD2').textContent = tableData['rowD'][2]
-            document.querySelector('#rowE2').textContent = tableData['rowE'][2]
-            document.querySelector('#rowF2').textContent = tableData['rowF'][2]
-            document.querySelector('#rowG2').textContent = tableData['rowG'][2]
-            document.querySelector('#rowH2').textContent = tableData['rowH'][2]
-            */
         })
 
         $('form#emit').submit(function(event) {
