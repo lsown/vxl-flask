@@ -46,7 +46,7 @@ def emit_ws_table(polltime = 1):
         socketio.sleep(polltime)
         for i in ws_table['tableData']:
             ws_table['tableData'][i][1] = random.randrange(0, 10)
-        socketio.emit('readback_msg', 
+        socketio.emit('sample_table', 
             {'data' : ws_table}) #try adding it to namespace='/readbacks' later
         print(f'Readback from rowA: {ws_table["tableData"]["rowA"][0]}: {ws_table["tableData"]["rowA"][1]} {ws_table["tableData"]["rowA"][2]}')  #for validation purposes
 
