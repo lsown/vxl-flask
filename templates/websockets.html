@@ -34,7 +34,7 @@
             <!--Example numerical form-->
             <form id="form2" action="/" method="" action="#">
                 <label for="input2">Set Filament Voltage: </label>
-                    <input type="number" class="form-number" id="input2-number" name="input2" placeholder="voltage (V)" 
+                    <input type="number" class="form-number" id="input2-number" name="input2" placeholder="0-10V" 
                     step="0.10" min="0" max="10">
                 <button name="input2" id="input2-button" type="button">Submit</button>
                 <span id='testtoss'>0 V</span>
@@ -140,7 +140,7 @@
                 let inputNumber = document.querySelector('#input2-number')
                 if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
                     {console.log("bad input detected");
-                    alert("Bad value")
+                    alert("Bad value - Keep within range & number")
                     return}
                 else 
                     {console.log("content ok!")}
