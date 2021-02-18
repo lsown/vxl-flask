@@ -43,8 +43,7 @@ def get_readbacks(polltime = 2):
         for i in rb_dict:
           rb_dict[i] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
-            {'data' : rb_dict}, 
-            #namespace='/readbacks')
+            {'data' : rb_dict}) #try adding it to namespace='/readbacks' later
         print(f'Representative readback from rb0: {rb_dict["rb0"]}')  #for validation purposes
 
 def backMonitor():
