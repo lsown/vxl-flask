@@ -35,7 +35,7 @@
             <form id="form2" action="/" method="" action="#">
                 <label for="input2">Set Filament Voltage: </label>
                     <input type="number" class="form-number" id="input2-number" name="input2" placeholder="voltage (V)" 
-                    required step="0.10" min="0" max="10">
+                    step="0.10" min="0" max="10">
                 <button name="input2" id="input2-button" type="button">Submit</button>
                 <span id='testtoss'>0 V</span>
             </form>
@@ -137,7 +137,9 @@
         });
         document.querySelector('#input2-number').onkeydown = function(e) {
             if(e.keyCode == 13) {
-            socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
+                if (input.validity.badInput) {console.log("bad input detected")}
+                else {console.log("content ok!")}
+                socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
             //document.querySelector('#input2-number').value = ''; //reset to blank
             return false;   //return false is to prevent normal data route
             }
