@@ -7,6 +7,10 @@
       width: 6rem;
   }
 
+  input {
+      text-align: center;
+  }
+
   input:invalid:required {
       border: 1px solid red;
   }
@@ -123,7 +127,7 @@
         The click event listener is needed for the button, keydown is required for using enter as input.*/
         socket.on('input2_response', function(msg) {
             console.log('received data: ' + msg.data)
-            document.querySelector('#input2-number').setAttribute('placeholder', ('last:' + msg.data))
+            document.querySelector('#input2-number').setAttribute('placeholder', ('lastval:' + msg.data))
             document.querySelector('#testtoss').textContent = msg.data + ' V'
         })
         document.querySelector('#input2-button').addEventListener('click', () => {
