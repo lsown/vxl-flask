@@ -94,8 +94,14 @@ def my_event(message):
   print(f'Received my event { message }')
 
 @socketio.on('input1_event')
-def my_event(message):
+def input1_event(message):
   x = str(message['data'] + 'V')
+  print(f'Received input1 event { x }')
+  emit('input1_response', {'data': x})
+
+@socketio.on('input2_event')
+def input1_event(message):
+  x = message['data']
   print(f'Received input1 event { x }')
   emit('input1_response', {'data': x})
 
