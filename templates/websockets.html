@@ -110,7 +110,9 @@
         })
 
         socket.on('readback_msg', function(msg) {
-            console.log('received data: ' + msg.data['rb0'])
+            for (let i = 0; i < msg.data.length)
+            console.log('received data from readback_msg: ' + msg.data['rb0'], msg.data['rb1'], 
+            msg.data['rb2'], msg.data['rb3'], msg.data['rb4'], msg.data['rb5'], msg.data['rb6'], msg.data['rb7'])
         })
 
         $('form#emit').submit(function(event) {
