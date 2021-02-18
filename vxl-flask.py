@@ -28,11 +28,11 @@ def get_host_IP():
 def get_comms():
   try:
     host_name = socket.gethostname()
-    netifaces.ifaddresses('eth0')
+    lo_ip = socket.gethostbyname(host_name)
     eth_ip = netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']
     wlan_ip = netifaces.ifaddresses('wlan0')[netifaces.AF_INET][0]['addr']
     print(f'Host name: {host_name} - Eth IP: {eth_ip} - wlan IP: {wlan_ip}')
-    return([host_name, eth_ip, wlan_ip])
+    return([host_name, lo_ip, eth_ip, wlan_ip])
   except:
     print('Unable to get hostname & IP!')
 
@@ -69,7 +69,8 @@ def emit_thread():
 @app.route('/')
 def index():
   ip_info = get_comms()
-  return render_template('index.html', host_name=ip_info[0], eth_ip=ip_info[1], wlan_ip=ip_info[2])
+  return render_template('index.html', 
+    host_name=ip_info[0], lo_ip=ip_info[1], eth_ip=ip_info[2], wlan_ip=ip_info[3])
 
 @app.route('/grafana')
 def grafana():
