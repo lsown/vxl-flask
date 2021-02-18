@@ -103,7 +103,7 @@ def input1_event(message):
 def input1_event(message):
   x = message['data']
   print(f'Received input1 event { x }')
-  emit('input1_response', {'data': x})
+  emit('input1_response', {'data': 'sup'})
 
 if __name__ == '__main__':
     socketio.run(debug=True)
