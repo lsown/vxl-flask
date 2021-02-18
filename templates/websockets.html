@@ -137,7 +137,7 @@
         });
         document.querySelector('#input2-number').onkeydown = function(e) {
             if(e.keyCode == 13) {
-                if (input.validity.badInput) {console.log("bad input detected")}
+                if (document.querySelector('#input2-number').validity.badInput) {console.log("bad input detected")}
                 else {console.log("content ok!")}
                 socket.emit('input2_event', {data: document.querySelector('#input2-number').value}); //send value from id to server
             //document.querySelector('#input2-number').value = ''; //reset to blank
