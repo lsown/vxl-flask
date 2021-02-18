@@ -162,11 +162,11 @@
         };
 
         //Example table ADC readback. Looks for emit packet
-        socket.on('sample_table', function(msg) {
+        socket.on('readback_msg', function(msg) {
             let tableHead = msg.data['tableHead']
             let tableData = msg.data['tableData']
             console.log(
-                'received data from sample_table: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
+                'received data from readback_msg: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
                 tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
                 tableData['rowG'][1] + tableData['rowH'][1])
 
