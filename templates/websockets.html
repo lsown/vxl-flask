@@ -44,9 +44,9 @@
         <table class="c-table">
             <thead>
                 <tr>
-                    <th scope="col" class="c-table-th1">Descriptor Head</th>
-                    <th scope="col" class="c-table-th2">Data Head</th>
-                    <th scope="col" class="c-table-th3">Units Head</th>
+                    <th scope="col" class="c-table-th1" id="tableHead0">Descriptor Head</th>
+                    <th scope="col" class="c-table-th2" id="tableHead1">Data Head</th>
+                    <th scope="col" class="c-table-th3" id="tableHead2">Units Head</th>
                 </tr>
             </thead>
             <tbody>
@@ -122,6 +122,10 @@
                 tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
                 tableData['rowG'][1] + tableData['rowH'][1])
 
+            document.querySelector('#tableHead0').textContent = tableHead[0]
+            document.querySelector('#tableHead1').textContent = tableHead[1]
+            document.querySelector('#tableHead2').textContent = tableHead[2]
+
             document.querySelector('#rowA0').textContent = tableData['rowA'][0]
             document.querySelector('#rowB0').textContent = tableData['rowB'][0]
             document.querySelector('#rowC0').textContent = tableData['rowC'][0]
@@ -139,6 +143,15 @@
             document.querySelector('#rowF1').textContent = tableData['rowF'][1]
             document.querySelector('#rowG1').textContent = tableData['rowG'][1]
             document.querySelector('#rowH1').textContent = tableData['rowH'][1]
+
+            document.querySelector('#rowA2').textContent = tableData['rowA'][2]
+            document.querySelector('#rowB2').textContent = tableData['rowB'][2]
+            document.querySelector('#rowC2').textContent = tableData['rowC'][2]
+            document.querySelector('#rowD2').textContent = tableData['rowD'][2]
+            document.querySelector('#rowE2').textContent = tableData['rowE'][2]
+            document.querySelector('#rowF2').textContent = tableData['rowF'][2]
+            document.querySelector('#rowG2').textContent = tableData['rowG'][2]
+            document.querySelector('#rowH2').textContent = tableData['rowH'][2]
         })
 
         $('form#emit').submit(function(event) {
