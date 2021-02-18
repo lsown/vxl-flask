@@ -3,22 +3,7 @@
 {% block styles %}
 
 {{ super() }}
-<style type="text/css">
-input + span {
-    padding-right: 30px;
-  }
-  
-  input:invalid+span:after {
-    position: absolute; content: '✖';
-    padding-left: 5px;
-  }
-  
-  input:valid+span:after {
-    position: absolute;
-    content: '✓';
-    padding-left: 5px;
-  }
-  
+<style type="text/css">  
   .form-number {
       width: 6rem;
   }
