@@ -144,7 +144,7 @@
         });
         document.querySelector('#input2-number').onkeydown = function(e) {
             if(e.keyCode == 13) {
-                if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
+                if (inputNumber.validity.valid != true)
                     {console.log("bad input detected");
                     //alert("Bad value - Keep within 0-10V range & numerical input")
                     alert(inputNumber.validationMessage)
