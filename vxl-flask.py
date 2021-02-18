@@ -26,29 +26,28 @@ def get_host_IP():
 
 
 rb_dict = {
-    'tableHead' : ['Description', 'Data', 'Units'],
-    'rowA':['Filament Voltage', random.randrange(0,10), 'V'],
-    'rowB':['Filament Current', random.randrange(0,10), 'A'],
-    'rowC':['Stage Voltage', random.randrange(0,10), 'mV'],
-    'rowD':['Stage Current', random.randrange(0,10), 'uA'],
-    'rowE':['Source Voltage', random.randrange(0,10), 'kV'],
-    'rowF':['Pressure', random.randrange(0,10), 'Torr'],
-    'rowG':['Lumens', random.randrange(0,10), 'V'],
-    'rowH':['Temperature', random.randrange(0,10), 'C']
+    'tableHead' : ['Description', 'Values', 'Units'],
+    'tableData' : {
+      'rowA':['Filament Voltage', random.randrange(0,10), 'V'],
+      'rowB':['Filament Current', random.randrange(0,10), 'A'],
+      'rowC':['Stage Voltage', random.randrange(0,10), 'mV'],
+      'rowD':['Stage Current', random.randrange(0,10), 'uA'],
+      'rowE':['Source Voltage', random.randrange(0,10), 'kV'],
+      'rowF':['Pressure', random.randrange(0,10), 'Torr'],
+      'rowG':['Lumens', random.randrange(0,10), 'V'],
+      'rowH':['Temperature', random.randrange(0,10), 'C']
+      }
     }
 
 def get_readbacks(polltime = 2):
     print(f'Starting readback polling every { polltime } second.')
     while True:
         socketio.sleep(polltime)
-        for i in rb_dict:
-          if rb_dict[i][1] == 'Data':
-            pass
-          else:
-            rb_dict[i][1] = random.randrange(0, 10)
+        for i in rb_dict['tableData']:
+            rb_dict['tableData'][i][1] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
             {'data' : rb_dict}) #try adding it to namespace='/readbacks' later
-        print(f'Readback from rb0: {rb_dict["rowA"][0]}: {rb_dict["rowA"][1]} {rb_dict["rowA"][2]}')  #for validation purposes
+        print(f'Readback from rowA: {rb_dict["tableData"]["rowA"][0]}: {rb_dict["tableData"]["rowA"][1]} {rb_dict["tableData"]["rowA"][2]}')  #for validation purposes
 
 def backMonitor():
     global thread

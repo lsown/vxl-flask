@@ -52,42 +52,42 @@
             <tbody>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-A</td>
-                    <td class='c-table-data' id='rb0'>Data-A</td>
+                    <td class='c-table-data' id='rowA1'>Data-A</td>
                     <td class='c-table-units'>Units-A</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-B</td>
-                    <td class='c-table-data' id='rb1'>Data-B</td>
+                    <td class='c-table-data' id='rowB1'>Data-B</td>
                     <td class='c-table-units'>Units-B</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-C</td>
-                    <td class='c-table-data' id='rb2'>Data-C</td>
+                    <td class='c-table-data' id='rowC1'>Data-C</td>
                     <td class='c-table-units'>Units-C</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-D</td>
-                    <td class='c-table-data' id='rb3'>Data-D</td>
+                    <td class='c-table-data' id='rowD1'>Data-D</td>
                     <td class='c-table-units'>Units-D</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-E</td>
-                    <td class='c-table-data' id='rb4'>Data-E</td>
+                    <td class='c-table-data' id='rowE1'>Data-E</td>
                     <td class='c-table-units'>Units-E</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-F</td>
-                    <td class='c-table-data' id='rb5'>Data-F</td>
+                    <td class='c-table-data' id='rowF1'>Data-F</td>
                     <td class='c-table-units'>Units-F</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-G</td>
-                    <td class='c-table-data' id='rb6'>Data-G</td>
+                    <td class='c-table-data' id='rowG1'>Data-G</td>
                     <td class='c-table-units'>Units-G</td>
                 </tr>
                 <tr>
                     <td class='c-table-descriptor'>Descriptor-H</td>
-                    <td class='c-table-data' id='rb7'>Data-H</td>
+                    <td class='c-table-data' id='rowH1'>Data-H</td>
                     <td class='c-table-units'>Units-H</td>
                 </tr>
             </tbody>
@@ -115,16 +115,33 @@
         })
 
         socket.on('readback_msg', function(msg) {
-            console.log('received data from readback_msg: ' + msg.data['rb0'] + msg.data['rb1'] + 
-            msg.data['rb2'] + msg.data['rb3'] + msg.data['rb4'] + msg.data['rb5'] + msg.data['rb6'] + msg.data['rb7'])
-            document.querySelector('#rb0').textContent = msg.data['rb0']
-            document.querySelector('#rb1').textContent = msg.data['rb1']
-            document.querySelector('#rb2').textContent = msg.data['rb2']
-            document.querySelector('#rb3').textContent = msg.data['rb3']
-            document.querySelector('#rb4').textContent = msg.data['rb4']
-            document.querySelector('#rb5').textContent = msg.data['rb5']
-            document.querySelector('#rb6').textContent = msg.data['rb6']
-            document.querySelector('#rb7').textContent = msg.data['rb7']
+            let tableHead = msg.data['tableHead']
+            let tableData = msg.data['tableData']
+            console.log(
+                'received data from readback_msg: ' + tableData['rowA'][1] + tableData['rowB'][1] + 
+                tableData['rowC'][1] + tableData['rowD'][1] + tableData['rowE'][1] + tableData['rowF'][1] + 
+                tableData['rowG'][1] + tableData['rowH'][1])
+            document.querySelector('#tableHeadDescription').textContent = tableHead[0]
+            document.querySelector('#tableHeadValue').textContent = tableHead[1]
+            document.querySelector('#tableHeadUnits').textContent = tableHead[2]
+
+            document.querySelector('#rowA0').textContent = tableData['rowA'][0]
+            document.querySelector('#rowB0').textContent = tableData['rowB'][0]
+            document.querySelector('#rowC0').textContent = tableData['rowC'][0]
+            document.querySelector('#rowD0').textContent = tableData['rowD'][0]
+            document.querySelector('#rowE0').textContent = tableData['rowE'][0]
+            document.querySelector('#rowF0').textContent = tableData['rowF'][0]
+            document.querySelector('#rowG0').textContent = tableData['rowG'][0]
+            document.querySelector('#rowH0').textContent = tableData['rowH'][0]
+
+            document.querySelector('#rowA1').textContent = tableData['rowA'][1]
+            document.querySelector('#rowB1').textContent = tableData['rowB'][1]
+            document.querySelector('#rowC1').textContent = tableData['rowC'][1]
+            document.querySelector('#rowD1').textContent = tableData['rowD'][1]
+            document.querySelector('#rowE1').textContent = tableData['rowE'][1]
+            document.querySelector('#rowF1').textContent = tableData['rowF'][1]
+            document.querySelector('#rowG1').textContent = tableData['rowG'][1]
+            document.querySelector('#rowH1').textContent = tableData['rowH'][1]
         })
 
         $('form#emit').submit(function(event) {
