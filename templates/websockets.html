@@ -20,7 +20,7 @@ input + span {
   }
   
   .form-number {
-      width: 5rem;
+      width: 6rem;
   }
 </style>
 {% endblock %}
@@ -41,7 +41,7 @@ input + span {
         <!--Example numerical form-->
         <form id="form2" action="/" method="post" action="#">
             <label for="input2">Set Filament Voltage: </label>
-                <input type="number" class="form-number" id="input2-number" name="input2" placeholder="voltage (V)" 
+                <input type="number" class="form-number" id="input2-number" name="input2" value="" placeholder="voltage (V)" 
                 step="0.1" min="0" max="5" required>
             <button name="input2" id="input2-button" type="button">Submit</button>
         </form>
