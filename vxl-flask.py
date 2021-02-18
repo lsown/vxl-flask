@@ -36,7 +36,7 @@ rb_dict = {
     'rb7' : random.randrange(0,10000),
     }
 
-def get_readbacks(polltime = 1):
+def get_readbacks(polltime = 2):
     print(f'Starting readback polling every { polltime } second.')
     while True:
         socketio.sleep(polltime)
@@ -44,8 +44,8 @@ def get_readbacks(polltime = 1):
           rb_dict[i] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
             {'data' : rb_dict}, 
-            namespace='/readbacks')
-        print(f'Representative readback from rb0: {rb_dict["rb0"]}')
+            #namespace='/readbacks')
+        print(f'Representative readback from rb0: {rb_dict["rb0"]}')  #for validation purposes
 
 def backMonitor():
     global thread
