@@ -68,7 +68,7 @@ def emit_thread():
 
 @app.route('/')
 def index():
-  ip_info = get_host_IP()
+  ip_info = get_comms()
   return render_template('index.html', host_name=ip_info[0], eth_ip=ip_info[1], wlan_ip=ip_info[2])
 
 @app.route('/grafana')
