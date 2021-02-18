@@ -44,7 +44,7 @@ input + span {
                 <input type="number" class="form-number" id="input2-number" name="input2" value="" placeholder="voltage (V)" 
                 step="0.1" min="0" max="5" required>
             <button name="input2" id="input2-button" type="button">Submit</button>
-            <span id='testtoss'>Placeholder Value</span>
+            <span id='testtoss'>0 V</span>
         </form>
 
         <form id="emit" method="POST" action='#'>
@@ -70,7 +70,7 @@ input + span {
         socket.on('input2_response', function(msg) {
             console.log('received data: ' + msg.data)
             //document.querySelector('#input2-number').setAttribute('value', msg.data)
-            document.querySelector('#testtoss').textContent = msg.data
+            document.querySelector('#testtoss').textContent = msg.data + 'V'
         })
 
         $('form#emit').submit(function(event) {
