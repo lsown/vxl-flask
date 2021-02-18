@@ -25,35 +25,35 @@ def get_host_IP():
       print("Unable to get Hostname and IP") 
 
 
-rb_dict = {
+ws_table = {
     'tableHead' : ['Description', 'Values', 'Units'],
     'tableData' : {
-      'rowA':['Filament Voltage', random.randrange(0,10), 'V'],
-      'rowB':['Filament Current', random.randrange(0,10), 'A'],
-      'rowC':['Stage Voltage', random.randrange(0,10), 'mV'],
-      'rowD':['Stage Current', random.randrange(0,10), 'uA'],
-      'rowE':['Source Voltage', random.randrange(0,10), 'kV'],
-      'rowF':['Pressure', random.randrange(0,10), 'Torr'],
-      'rowG':['Lumens', random.randrange(0,10), 'V'],
-      'rowH':['Temperature', random.randrange(0,10), 'C']
+      'rowA':['Filament Voltage', 0, 'V'],
+      'rowB':['Filament Current', 0, 'A'],
+      'rowC':['Stage Voltage', 0, 'mV'],
+      'rowD':['Stage Current', 0, 'uA'],
+      'rowE':['Source Voltage', 0, 'kV'],
+      'rowF':['Pressure', 0, 'Torr'],
+      'rowG':['Lumens', 0, 'V'],
+      'rowH':['Temperature', 0, 'C']
       }
     }
 
-def get_readbacks(polltime = 1):
+def emit_ws_table(polltime = 1):
     print(f'Starting readback polling every { polltime } second.')
     while True:
         socketio.sleep(polltime)
-        for i in rb_dict['tableData']:
-            rb_dict['tableData'][i][1] = random.randrange(0, 10)
+        for i in ws_table['tableData']:
+            ws_table['tableData'][i][1] = random.randrange(0, 10)
         socketio.emit('readback_msg', 
-            {'data' : rb_dict}) #try adding it to namespace='/readbacks' later
-        print(f'Readback from rowA: {rb_dict["tableData"]["rowA"][0]}: {rb_dict["tableData"]["rowA"][1]} {rb_dict["tableData"]["rowA"][2]}')  #for validation purposes
+            {'data' : ws_table}) #try adding it to namespace='/readbacks' later
+        print(f'Readback from rowA: {ws_table["tableData"]["rowA"][0]}: {ws_table["tableData"]["rowA"][1]} {ws_table["tableData"]["rowA"][2]}')  #for validation purposes
 
 def backMonitor():
     global thread
     with thread_lock:
         if thread is None:
-            thread = socketio.start_background_task(get_readbacks)
+            thread = socketio.start_background_task(emit_ws_table)
 
 @app.route('/')
 def index():
