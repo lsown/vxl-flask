@@ -146,7 +146,8 @@
             if(e.keyCode == 13) {
                 if ((inputNumber.validity.badInput) || inputNumber.validity.rangeOverflow || inputNumber.validity.rangeUnderflow)
                     {console.log("bad input detected");
-                    alert("Bad value - Keep within 0-10V range & numerical input")
+                    //alert("Bad value - Keep within 0-10V range & numerical input")
+                    alert(inputNumber.validationMessage)
                     return}
                 else 
                     {console.log("content ok!")}
