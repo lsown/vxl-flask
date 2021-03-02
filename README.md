@@ -2,9 +2,16 @@
 Voxa Flask Template Design
 
 Overview
+
 vxl-flask.py is the backend.
-html static pages in templates directory. Uses Jinja2 base template (base.html). Other html pages import from this base structure.
-css & js in static directory. Layout structure uses grid & flex CSS.
+
+html static pages in templates directory. 
+
+Uses Jinja2. Base template (base.html), with child html pages import from this base structure.
+
+The css & js is in static directory. 
+
+Layout structure uses grid & flex CSS.
 
 Web communication is using websocket.io.
 
