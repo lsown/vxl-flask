@@ -22,6 +22,6 @@ websocket is example code for sending and receiving data from UI to backend flas
 Grafana user is admin, password is standard voxa-pass.
 
 Dependencies in requirements.txt. Run with a virtual environment for dependencies.
-- pip3 install requirements.txt
+- pip3 install -r requirements.txt
 
 Run ./run_flask.sh to startup server. This is a development server with DEBUG=TRUE.
