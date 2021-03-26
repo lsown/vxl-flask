@@ -21,9 +21,17 @@ websocket is example code for sending and receiving data from UI to backend flas
 
 Grafana user is admin, password is standard voxa-pass.
 
-Dependencies in requirements.txt. Run with a virtual environment for dependencies (setup Venv, install dependencies, and activate)
-- *some command for setting up venv
-- pip3 install -r requirements.txt
-- source venv/bin/activate
+##Overview##
 
-Run ./run_flask.sh to startup server. This is a development server with DEBUG=TRUE.
+##Installation & Setup##
+1. Set up virtual environment: `python3 -m venv venv`
+2. Activate virtual environment: `source venv/bin/activate
+3. Install dependencies in virtual environment: `pip install -r requirements.txt`
+
+##Running application##
+* For quick start of the development environment with DEBUG=TRUE, can run script: `./flask_run.sh`
+
+##Organization##
+* vxl-flask.py : Core WSGI Flask framework code
+* folder templates : Contains html pages. Structure uses jinja2 templating, with base.html the core example containing overall structure. Child pages are example code.
+* folder static : Contains css, images, and scripts.
