@@ -1,37 +1,34 @@
 # vxl-flask
 Voxa Flask Template Design
 
-<b>Overview</b>
+## Overview
 
-vxl-flask.py is the backend.
+This is an example template for rapid construction of a Voxa Device UI. This uses
+1. Flask WSGI micro-framework
+2. Jinja2 for HTML templating
+3. HTML5 for web pages
+4. CSS3 for styling
+5. Websockets for real-time communications between client & server
 
-html static pages in templates directory. 
+The goal for this UI is:
+1. Lightweight with minimal dependencies
+2. Allows rapid prototyping and digital control of physical devices 
 
-Uses Jinja2. Base template (base.html), with child html pages import from this base structure.
-
-The css & js is in static directory. 
-
-Layout structure uses grid & flex CSS.
-
-Web communication is using websocket.io.
-
-index.html is general multi-pane example of potential use case.
-grafana tab is example of iframing grafana. See Voxa OneNote for examples of setting up grafana.
-websocket is example code for sending and receiving data from UI to backend flask server.
-
-Grafana user is admin, password is standard voxa-pass.
-
-##Overview##
-
-##Installation & Setup##
+## Installation & Setup
 1. Set up virtual environment: `python3 -m venv venv`
 2. Activate virtual environment: `source venv/bin/activate
 3. Install dependencies in virtual environment: `pip install -r requirements.txt`
 
-##Running application##
+## How tu run after setup
+* Enter the virtual environment if not already: `source venv/bin/activate`
 * For quick start of the development environment with DEBUG=TRUE, can run script: `./flask_run.sh`
 
-##Organization##
+## File Organization
 * vxl-flask.py : Core WSGI Flask framework code
-* folder templates : Contains html pages. Structure uses jinja2 templating, with base.html the core example containing overall structure. Child pages are example code.
-* folder static : Contains css, images, and scripts.
+* Folder templates : Contains html pages. Pages use jinja2 templating, with base.html as the base template upon which all other pages are built.
+  * index.html is general multi-panel example of 6-panels with dynamic size scaling.
+  * grafana.html is an example for integrating grafana into the UI using iframe. See Voxa OneNote for examples of setting up grafana / iframe. User login is admin & the password is standard voxa pwd. This requires grafana services to be running and serving.
+  * websocket.html is an example for setting up a socket between the client and server.
+* Folder static : Contains css, images, and scripts.
+  * css : Follow BEM convention for naming classes
+  * 
