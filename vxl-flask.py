@@ -24,7 +24,12 @@ def get_comms():
     print(f'Host name: {host_name} - Eth IP: {eth_ip} - wlan IP: {wlan_ip}')
     return([host_name, lo_ip, eth_ip, wlan_ip])
   except:
-    print('Unable to get hostname & IP!')
+      print('Unable to get hostname & IP! Setting some silly defaults...')
+      host_name = "localhost"
+      lo_ip = "127.0.0.1"
+      eth_ip = "10.0.0.74"
+      wlan_ip = "192.168.42.6"
+      return([host_name, lo_ip, eth_ip, wlan_ip])
 
 ws_table = {
     'tableHead' : ['Description', 'Values', 'Units'],
