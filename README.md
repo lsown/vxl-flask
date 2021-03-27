@@ -15,9 +15,10 @@ The goal for this UI is:
 2. Allows rapid prototyping and digital control of physical devices 
 
 ## Installation & Setup
-1. Set up virtual environment: `python3 -m venv venv`
-2. Activate virtual environment: `source venv/bin/activate
-3. Install dependencies in virtual environment: `pip install -r requirements.txt`
+1. Install at least python3.7 (can check `python3 --version`): `sudo apt install python3.7`
+2. Set up virtual environment: `python3 -m venv venv`
+3. Activate virtual environment: `source venv/bin/activate
+4. Install dependencies in virtual environment: `pip install -r requirements.txt`
 
 ## How tu run after setup
 * Enter the virtual environment if not already: `source venv/bin/activate`
