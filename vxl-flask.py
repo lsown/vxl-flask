@@ -45,6 +45,8 @@ ws_table = {
       }
     }
 
+ip_info = get_comms()
+
 def emit_ws_table(polltime = 1):
     print(f'Starting readback polling every { polltime } second.')
     while True:
@@ -63,13 +65,13 @@ def emit_thread():
 
 @app.route('/')
 def index():
-  ip_info = get_comms()
   return render_template('index.html', 
     host_name=ip_info[0], lo_ip=ip_info[1], eth_ip=ip_info[2], wlan_ip=ip_info[3])
 
 @app.route('/grafana')
 def grafana():
-  return render_template('grafana.html')
+  return render_template('grafana.html',
+    host_name=ip_info[0], lo_ip=ip_info[1], eth_ip=ip_info[2], wlan_ip=ip_info[3])
 
 @app.route('/base')
 def base():
