@@ -3,12 +3,12 @@ Voxa Flask Template Design
 
 ## Overview
 
-This is an example template for rapid construction of a Voxa Device UI. This uses
-1. Flask WSGI micro-framework
-2. Jinja2 for HTML templating
+This is an example template for rapid construction of a Voxa Device UI. At a minimum, this project uses:
+1. Flask WSGI micro-framework - [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
+2. Jinja2 for HTML templating - [Jinja2 Documentation](https://jinja2docs.readthedocs.io/en/stable/)
 3. HTML5 for web pages
 4. CSS3 for styling
-5. Websockets for real-time communications between client & server
+5. Websockets for real-time communications between client & server - [flask-socketio](https://flask-socketio.readthedocs.io/en/latest/)
 
 The goal for this UI is:
 1. Lightweight with minimal dependencies
@@ -20,19 +20,22 @@ The goal for this UI is:
 3. Activate virtual environment: `source venv/bin/activate
 4. Install dependencies in virtual environment: `pip install -r requirements.txt`
 
-## How tu run after setup
+## Start Flask Development Environment
 * Enter the virtual environment if not already: `source venv/bin/activate`
 * For quick start of the development environment with DEBUG=TRUE, can run script: `./flask_run.sh`
 
-## File Organization
-* vxl-flask.py : Core WSGI Flask framework code
+## Project Organization
+* vxl-flask.py : Core WSGI Flask framework code. We use this as an entry point for starting up the web application.
 * Folder templates : Contains html pages. Pages use jinja2 templating, with base.html as the base template upon which all other pages are built.
   * index.html is general multi-panel example of 6-panels with dynamic size scaling.
   * grafana.html is an example for integrating grafana into the UI using iframe. See Voxa OneNote for examples of setting up grafana / iframe. User login is admin & the password is standard voxa pwd. This requires grafana services to be running and serving.
   * websocket.html is an example for setting up a socket between the client and server.
 * Folder static : Contains css, images, and scripts.
 
-## General rules
+## General Syntax & Formatting Rules
 * CSS: Follow BEM styling conventions for flat hiearchy and ease of maintenance
 * HTML: Use templating & stay within the grid / flexbox structure of organizing web pages.
 * Javascript: Keep outside script dependencies at a MINIMUM. If needed, maintain a local copy so UI does not break if device is not connected to internet and only on intranet.
+
+### Useful Resources
+* CSS code maintenance - [Block Elements & Modifiers](http://getbem.com/introduction/)
