@@ -30,5 +30,8 @@ The goal for this UI is:
   * grafana.html is an example for integrating grafana into the UI using iframe. See Voxa OneNote for examples of setting up grafana / iframe. User login is admin & the password is standard voxa pwd. This requires grafana services to be running and serving.
   * websocket.html is an example for setting up a socket between the client and server.
 * Folder static : Contains css, images, and scripts.
-  * css : Follow BEM convention for naming classes
-  * 
+
+## General rules
+* CSS: Follow BEM styling conventions for flat hiearchy and ease of maintenance
+* HTML: Use templating & stay within the grid / flexbox structure of organizing web pages.
+* Javascript: Keep outside script dependencies at a MINIMUM. If needed, maintain a local copy so UI does not break if device is not connected to internet and only on intranet.
