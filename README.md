@@ -19,6 +19,9 @@ The goal for this UI is:
 2. Set up virtual environment: `python3 -m venv venv`
 3. Activate virtual environment: `source venv/bin/activate`
 4. Install dependencies in virtual environment: `pip install -r requirements.txt`
+5. Optional - Install local grafana & influxDB [Guide](https://simonhearne.com/2020/pi-influx-grafana/)
+6. Optional - Configure grafana & influxDB (work in progress, reference tutorial to be added)
+7. Optional - Set up grafana config to allow iFrame access (work in progress, reference tutorial to be added)
 
 ## Start Flask Development Environment
 * Enter the virtual environment if not already: `source venv/bin/activate`
@@ -40,3 +43,5 @@ The goal for this UI is:
 ### Useful Resources
 * CSS code maintenance - [Block Elements & Modifiers](http://getbem.com/introduction/)
 * MDN Web Developer - [MDN Web](https://developer.mozilla.org/en-US/docs/Web)
+
+
