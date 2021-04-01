@@ -19,7 +19,7 @@ The goal for this UI is:
 2. Set up virtual environment: `python3 -m venv venv`
 3. Activate virtual environment: `source venv/bin/activate`
 4. Install dependencies in virtual environment: `pip install -r requirements.txt`
-5. Optional - Install local grafana & influxDB [Guide](https://simonhearne.com/2020/pi-influx-grafana/)
+5. Optional - Install local grafana & influxDB - [Example Guide](https://simonhearne.com/2020/pi-influx-grafana/)
 6. Optional - Configure grafana & influxDB (work in progress, reference tutorial to be added)
 7. Optional - Set up grafana config to allow iFrame access (work in progress, reference tutorial to be added)
 
