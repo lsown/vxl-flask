@@ -44,4 +44,12 @@ The goal for this UI is:
 * CSS code maintenance - [Block Elements & Modifiers](http://getbem.com/introduction/)
 * MDN Web Developer - [MDN Web](https://developer.mozilla.org/en-US/docs/Web)
 
-
+### Reference UI Images
+#### Home Tab - Web
+![Image of Home - Web UI](https://github.com/lsown/vxl-flask/blob/main/images/WebUI%20-%20Home%201.jpg)
+#### Home Tab - Mobile - Media breaks
+![Image of Home - Mobile UI](https://github.com/lsown/vxl-flask/blob/main/images/WebUI%20-%20Home%202.jpg)
+#### Grafana Tab
+![Image of Grafana UI](https://github.com/lsown/vxl-flask/blob/main/images/WebUI%20-%20Grafana.jpg)
+#### Websocket Tab
+![Image of Websocket UI](https://github.com/lsown/vxl-flask/blob/main/images/WebUI%20-%20Websocket.jpg)
