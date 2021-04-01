@@ -6,8 +6,8 @@ Voxa Flask Template Design
 This is an example template for rapid construction of a Voxa Device UI. At a minimum, this project uses:
 1. Flask WSGI micro-framework - [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
 2. Jinja2 for HTML templating - [Jinja2 Documentation](https://jinja2docs.readthedocs.io/en/stable/)
-3. HTML5 for web pages
-4. CSS3 for styling
+3. HTML5 for structure/content - Flexbox / Grid - [HTML MDN](https://developer.mozilla.org/en-US/docs/Web/HTML)
+4. CSS3 for styling - [CSS MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)
 5. Websockets for real-time communications between client & server - [flask-socketio](https://flask-socketio.readthedocs.io/en/latest/)
 
 The goal for this UI is:
@@ -39,3 +39,4 @@ The goal for this UI is:
 
 ### Useful Resources
 * CSS code maintenance - [Block Elements & Modifiers](http://getbem.com/introduction/)
+* MDN Web Developer - [MDN Web](https://developer.mozilla.org/en-US/docs/Web)
